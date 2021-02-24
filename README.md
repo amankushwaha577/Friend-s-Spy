@@ -10,7 +10,7 @@ Founded By Team Friend's Spy,The mission of our Web Application is to give peopl
 
  
 # Team Friend's Spy
-| Name | Github Username |
+| Name | Github Username | 
 | ------ | ------ |
 | Aman Saxena | [link ] |
 | Aman Kushwaha | [https://github.com/amankushwaha577/] |
