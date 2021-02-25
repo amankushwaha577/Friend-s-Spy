@@ -16,7 +16,7 @@ Founded By Team Friend's Spy,The mission of our Web Application is to give peopl
 | Aman Kushwaha | [https://github.com/amankushwaha577/] |
 | Akarshit Srivastava | [link] |
 | Akshat Sinha | [https://github.com/Akshat555624] |
-| Harshit Saxena | [link] |
+| Harshit Saxena | [https://github.com/saxenaharshit/] |
 
  
 
