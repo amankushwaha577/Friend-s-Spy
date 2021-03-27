@@ -113,3 +113,42 @@ exports.forgotPassword = (req, res) => {
         });
     });
 };
+
+
+
+// to allow user to reset password
+// first you will find the user in the database with user's resetPasswordLink
+// user model's resetPasswordLink's value must match the token
+// if the user's resetPasswordLink(token) matches the incoming req.body.resetPasswordLink(token)
+// then we got the right user
+
+exports.resetPassword = (req, res) => {
+    const { resetPasswordLink, newPassword } = req.body;
+
+    User.findOne({ resetPasswordLink }, (err, user) => {
+        // if err or no user
+        if (err || !user)
+            return res.status('401').json({
+                error: 'Invalid Link!'
+            });
+
+        const updatedFields = {
+            password: newPassword,
+            resetPasswordLink: ''
+        };
+
+        user = _.extend(user, updatedFields);
+        user.updated = Date.now();
+
+        user.save((err, result) => {
+            if (err) {
+                return res.status(400).json({
+                    error: err
+                });
+            }
+            res.json({
+                message: `Great! Now you can login with your new password.`
+            });
+        });
+    });
+};
