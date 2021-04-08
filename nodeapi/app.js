@@ -59,3 +59,10 @@ app.use(function(err, req, res, next) {
         res.status(401).json({ error: 'Unauthorized!' });
     }
 });
+
+
+
+const port = process.env.PORT || 8080;
+app.listen(port, () => {
+    console.log(`A Node Js API is listening on port: ${port}`);
+});
