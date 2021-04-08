@@ -6,7 +6,6 @@ const _ = require('lodash');
 const { OAuth2Client } = require('google-auth-library');
 const { sendEmail } = require('../helpers');
 
-
 exports.signup = async (req, res) => {
     const userExists = await User.findOne({ email: req.body.email });
     if (userExists)
@@ -17,9 +16,6 @@ exports.signup = async (req, res) => {
     await user.save();
     res.status(200).json({ message: 'Signup success! Please login.' });
 };
-
-
-
 
 exports.signin = (req, res) => {
     // find the user based on email
@@ -48,27 +44,15 @@ exports.signin = (req, res) => {
     });
 };
 
-
-
 exports.signout = (req, res) => {
     res.clearCookie('t');
     return res.json({ message: 'Signout success!' });
 };
 
-
 exports.requireSignin = expressJwt({
     secret: process.env.JWT_SECRET,
     userProperty: 'auth'
 });
-
-
-
-
-
-
-
-
-
 
 exports.forgotPassword = (req, res) => {
     if (!req.body) return res.status(400).json({ message: 'No request body' });
@@ -114,8 +98,6 @@ exports.forgotPassword = (req, res) => {
     });
 };
 
-
-
 // to allow user to reset password
 // first you will find the user in the database with user's resetPasswordLink
 // user model's resetPasswordLink's value must match the token
@@ -152,8 +134,6 @@ exports.resetPassword = (req, res) => {
         });
     });
 };
-
-
 
 const client = new OAuth2Client(process.env.REACT_APP_GOOGLE_CLIENT_ID);
 
@@ -196,10 +176,6 @@ exports.socialLogin = async (req, res) => {
         });
     }
 };
-
-
-
-
 
 // exports.socialLogin = (req, res) => {
 //     console.log('social login req.body', req.body);
