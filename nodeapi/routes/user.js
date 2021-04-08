@@ -13,3 +13,7 @@ const {
     findPeople,
     hasAuthorization
 } = require("../controllers/user");
+
+const { requireSignin } = require("../controllers/auth");
+
+const router = express.Router();
