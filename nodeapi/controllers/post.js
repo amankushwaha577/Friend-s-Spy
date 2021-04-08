@@ -190,3 +190,28 @@ exports.updatePost = (req, res, next) => {
         });
     });
 };
+
+
+
+exports.deletePost = (req, res) => {
+    let post = req.post;
+    post.remove((err, post) => {
+        if (err) {
+            return res.status(400).json({
+                error: err
+            });
+        }
+        res.json({
+            message: 'Post deleted successfully'
+        });
+    });
+};
+
+exports.photo = (req, res, next) => {
+    res.set('Content-Type', req.post.photo.contentType);
+    return res.send(req.post.photo.data);
+};
+
+exports.singlePost = (req, res) => {
+    return res.json(req.post);
+};
