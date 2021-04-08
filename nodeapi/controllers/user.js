@@ -168,3 +168,15 @@ exports.addFollower = (req, res) => {
             res.json(result);
         });
 };
+
+
+
+// remove follow unfollow
+exports.removeFollowing = (req, res, next) => {
+    User.findByIdAndUpdate(req.body.userId, { $pull: { following: req.body.unfollowId } }, (err, result) => {
+        if (err) {
+            return res.status(400).json({ error: err });
+        }
+        next();
+    });
+};
