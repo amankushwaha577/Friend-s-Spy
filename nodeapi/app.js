@@ -43,3 +43,19 @@ app.get('/api', (req, res) => {
         res.json(docs);
     });
 });
+
+
+// middleware -
+app.use(morgan('dev'));
+app.use(bodyParser.json());
+app.use(cookieParser());
+app.use(expressValidator());
+app.use(cors());
+app.use('/api', postRoutes);
+app.use('/api', authRoutes);
+app.use('/api', userRoutes);
+app.use(function(err, req, res, next) {
+    if (err.name === 'UnauthorizedError') {
+        res.status(401).json({ error: 'Unauthorized!' });
+    }
+});
