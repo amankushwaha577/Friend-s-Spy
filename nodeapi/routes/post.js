@@ -18,3 +18,7 @@ const {
 const { requireSignin } = require('../controllers/auth');
 const { userById } = require('../controllers/user');
 const { createPostValidator } = require('../validator');
+
+const router = express.Router();
+
+router.get('/posts', getPosts);
