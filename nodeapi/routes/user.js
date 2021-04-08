@@ -17,3 +17,6 @@ const {
 const { requireSignin } = require("../controllers/auth");
 
 const router = express.Router();
+
+router.put("/user/follow", requireSignin, addFollowing, addFollower);
+router.put("/user/unfollow", requireSignin, removeFollowing, removeFollower);
