@@ -151,3 +151,20 @@ exports.addFollowing = (req, res, next) => {
         next();
     });
 };
+
+
+exports.addFollower = (req, res) => {
+    User.findByIdAndUpdate(req.body.followId, { $push: { followers: req.body.userId } }, { new: true })
+        .populate('following', '_id name')
+        .populate('followers', '_id name')
+        .exec((err, result) => {
+            if (err) {
+                return res.status(400).json({
+                    error: err
+                });
+            }
+            result.hashed_password = undefined;
+            result.salt = undefined;
+            res.json(result);
+        });
+};
