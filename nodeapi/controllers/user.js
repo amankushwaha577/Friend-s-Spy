@@ -140,3 +140,14 @@ exports.deleteUser = (req, res, next) => {
         res.json({ message: 'User deleted successfully' });
     });
 };
+
+
+// follow unfollow
+exports.addFollowing = (req, res, next) => {
+    User.findByIdAndUpdate(req.body.userId, { $push: { following: req.body.followId } }, (err, result) => {
+        if (err) {
+            return res.status(400).json({ error: err });
+        }
+        next();
+    });
+};
