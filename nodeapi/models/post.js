@@ -13,3 +13,16 @@ const postSchema = new mongoose.Schema({
     photo: {
         data: Buffer,
         contenType: String
+    },
+    postedBy: {
+        type: ObjectId,
+        ref: 'User'
+    },
+    created: {
+        type: Date,
+        default: Date.now
+    },
+    updated: Date,
+    likes: [{ type: ObjectId, ref: 'User' }],
+    comments: [
+        {
