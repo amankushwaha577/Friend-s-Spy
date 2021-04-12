@@ -12,3 +12,11 @@ exports.sendEmail = emailData => {
       user: "masterjupiter2015@gmail.com",
       pass: "kshzlmomlthllktq"
     }
+
+    
+  });
+  return transporter
+    .sendMail(emailData)
+    .then(info => console.log(`Message sent: ${info.response}`))
+    .catch(err => console.log(`Problem sending email: ${err}`));
+};
