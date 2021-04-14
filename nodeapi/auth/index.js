@@ -33,3 +33,10 @@ export const authenticate = (jwt, next) => {
         next();
     }
 };
+
+export const setName = (name, next) => {
+    if (typeof window !== 'undefined') {
+        localStorage.setItem('username', JSON.stringify(name));
+        next();
+    }
+};
