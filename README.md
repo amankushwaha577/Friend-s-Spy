@@ -12,9 +12,9 @@ Founded By Team Friend's Spy,The mission of our Web Application is to give peopl
 # Team Friend's Spy
 | Name | Github Username | 
 | ------ | ------ |
-| Aman Saxena | [link ] |
+| Aman Saxena | [https://github.com/amanS2206/] |
 | Aman Kushwaha | [https://github.com/amankushwaha577/] |
-| Akarshit Srivastava | [link] |
+| Akarshit Srivastava | [https://github.com/akarshit2001/] |
 | Akshat Sinha | [https://github.com/Akshat555624] |
 | Harshit Saxena | [https://github.com/saxenaharshit/] |
 
