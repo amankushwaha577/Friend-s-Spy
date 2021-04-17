@@ -87,3 +87,41 @@ class Posts extends Component {
             </div>
         );
     };
+
+    render() {
+        const { posts, page } = this.state;
+        return (
+            <div className="container">
+                <h2 className="mt-5 mb-5">
+                    {!posts.length ? "No more posts!" : "Recent Posts"}
+                </h2>
+
+                {this.renderPosts(posts)}
+
+                {page > 1 ? (
+                    <button
+                        className="btn btn-raised btn-warning mr-5 mt-5 mb-5"
+                        onClick={() => this.loadLess(1)}
+                    >
+                        Previous ({this.state.page - 1})
+                    </button>
+                ) : (
+                    ""
+                )}
+
+                {posts.length ? (
+                    <button
+                        className="btn btn-raised btn-success mt-5 mb-5"
+                        onClick={() => this.loadMore(1)}
+                    >
+                        Next ({page + 1})
+                    </button>
+                ) : (
+                    ""
+                )}
+            </div>
+        );
+    }
+}
+
+export default Posts;
