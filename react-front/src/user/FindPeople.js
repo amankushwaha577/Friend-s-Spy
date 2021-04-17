@@ -61,3 +61,26 @@ class FindPeople extends Component {
             ))}
         </div>
     );
+
+    
+  
+
+
+    render() {
+        const { users, open, followMessage } = this.state;
+        return (
+            <div className="container">
+                <h2 className="mt-5 mb-5">Find People</h2>
+
+                {open && (
+                    <div className="alert alert-success">{followMessage}</div>
+                )}
+
+                {this.renderUsers(users)}
+            </div>
+        );
+    }
+}
+
+export default FindPeople;
+
