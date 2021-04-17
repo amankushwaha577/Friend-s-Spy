@@ -133,3 +133,60 @@ class Profile extends Component {
                 onButtonClick={this.clickFollowButton}
               />
             )}
+
+            
+
+  
+
+  
+
+  
+
+
+
+
+
+          
+
+<div>
+              {isAuthenticated().user &&
+                isAuthenticated().user.role === "admin" && (
+                  <div class="card mt-5">
+                    <div className="card-body">
+                      <h5 className="card-title">Admin</h5>
+                      <p className="mb-2 text-danger">
+                        Edit/Delete as an Admin
+                      </p>
+                      <Link
+                        className="btn btn-raised btn-success mr-5"
+                        to={`/user/edit/${user._id}`}
+                      >
+                        Edit Profile
+                      </Link>
+                      {/*<DeleteUser userId={user._id} />*/}
+                      <DeleteUser />
+                    </div>
+                  </div>
+                )}
+            </div>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col md-12 mt-5 mb-5">
+            <hr />
+            <p className="lead">{user.about}</p>
+            <hr />
+
+            <ProfileTabs
+              followers={user.followers}
+              following={user.following}
+              posts={posts}
+            />
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
+
+export default Profile;
