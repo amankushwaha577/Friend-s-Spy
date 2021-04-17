@@ -81,3 +81,88 @@ class SinglePost extends Component {
             this.deletePost();
         }
     };
+
+
+    renderPost = post => {
+        const posterId = post.postedBy ? `/user/${post.postedBy._id}` : '';
+        const posterName = post.postedBy ? post.postedBy.name : ' Unknown';
+
+        const { like, likes } = this.state;
+
+        return (
+            <div className="card-body">
+                <img
+                    src={`${process.env.REACT_APP_API_URL}/post/photo/${post._id}`}
+                    alt={post.title}
+                    onError={i => (i.target.src = `${DefaultPost}`)}
+                    className="img-thunbnail mb-3"
+                    style={{
+                        height: '300px',
+                        width: '100%',
+                        objectFit: 'cover'
+                    }}
+                />
+
+                {like ? (
+                    <h3 onClick={this.likeToggle}>
+                        <i
+                            className="fa fa-thumbs-up text-success bg-dark"
+                            style={{ padding: '10px', borderRadius: '50%' }}
+                        />{' '}
+                        {likes} Like
+                    </h3>
+                ) : (
+                    <h3 onClick={this.likeToggle}>
+                        <i
+                            className="fa fa-thumbs-up text-warning bg-dark"
+                            style={{ padding: '10px', borderRadius: '50%' }}
+                        />{' '}
+                        {likes} Like
+                    </h3>
+                )}
+
+                <p className="card-text">{post.body}</p>
+                <br />
+                <p className="font-italic mark">
+                    Posted by <Link to={`${posterId}`}>{posterName} </Link>
+                    on {new Date(post.created).toDateString()}
+                </p>
+                <div className="d-inline-block">
+                    <Link to={`/`} className="btn btn-raised btn-primary btn-sm mr-5">
+                        Back to posts
+                    </Link>
+
+                    {isAuthenticated().user && isAuthenticated().user._id === post.postedBy._id && (
+                        <>
+                            <Link to={`/post/edit/${post._id}`} className="btn btn-raised btn-warning btn-sm mr-5">
+                                Update Post
+                            </Link>
+                            <button onClick={this.deleteConfirmed} className="btn btn-raised btn-danger">
+                                Delete Post
+                            </button>
+                        </>
+                    )}
+
+                    <div>
+                        {isAuthenticated().user && isAuthenticated().user.role === 'admin' && (
+                            <div class="card mt-5">
+                                <div className="card-body">
+                                    <h5 className="card-title">Admin</h5>
+                                    <p className="mb-2 text-danger">Edit/Delete as an Admin</p>
+                                    <Link
+                                        to={`/post/edit/${post._id}`}
+                                        className="btn btn-raised btn-warning btn-sm mr-5"
+                                    >
+                                        Update Post
+                                    </Link>
+                                    <button onClick={this.deleteConfirmed} className="btn btn-raised btn-danger">
+                                        Delete Post
+                                    </button>
+                                </div>
+                            </div>
+                        )}
+                    </div>
+                </div>
+            </div>
+        );
+    };
