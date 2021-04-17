@@ -17,3 +17,25 @@ class EditPost extends Component {
             loading: false
         };
     }
+
+
+    init = postId => {
+        singlePost(postId).then(data => {
+            if (data.error) {
+                this.setState({ redirectToProfile: true });
+            } else {
+                this.setState({
+                    id: data.postedBy._id,
+                    title: data.title,
+                    body: data.body,
+                    error: ""
+                });
+            }
+        });
+    };
+
+    componentDidMount() {
+        this.postData = new FormData();
+        const postId = this.props.match.params.postId;
+        this.init(postId);
+    }
