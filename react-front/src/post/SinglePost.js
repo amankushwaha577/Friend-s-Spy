@@ -20,3 +20,45 @@ class SinglePost extends Component {
         let match = likes.indexOf(userId) !== -1;
         return match;
     };
+
+    componentDidMount = () => {
+        const postId = this.props.match.params.postId;
+        singlePost(postId).then(data => {
+            if (data.error) {
+                console.log(data.error);
+            } else {
+                this.setState({
+                    post: data,
+                    likes: data.likes.length,
+                    like: this.checkLike(data.likes),
+                    comments: data.comments
+                });
+            }
+        });
+    };
+
+    updateComments = comments => {
+        this.setState({ comments });
+    };
+
+    likeToggle = () => {
+        if (!isAuthenticated()) {
+            this.setState({ redirectToSignin: true });
+            return false;
+        }
+        let callApi = this.state.like ? unlike : like;
+        const userId = isAuthenticated().user._id;
+        const postId = this.state.post._id;
+        const token = isAuthenticated().token;
+
+        callApi(userId, token, postId).then(data => {
+            if (data.error) {
+                console.log(data.error);
+            } else {
+                this.setState({
+                    like: !this.state.like,
+                    likes: data.likes.length
+                });
+            }
+        });
+    };
