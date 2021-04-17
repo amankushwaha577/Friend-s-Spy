@@ -26,3 +26,30 @@ class Comment extends Component {
         }
         return true;
     };
+
+    addComment = e => {
+        e.preventDefault();
+
+        if (!isAuthenticated()) {
+            this.setState({ error: "Please signin to leave a comment" });
+            return false;
+        }
+
+        if (this.isValid()) {
+            const userId = isAuthenticated().user._id;
+            const token = isAuthenticated().token;
+            const postId = this.props.postId;
+
+            comment(userId, token, postId, { text: this.state.text }).then(
+                data => {
+                    if (data.error) {
+                        console.log(data.error);
+                    } else {
+                        this.setState({ text: "" });
+                        // dispatch fresh list of coments to parent (SinglePost)
+                        this.props.updateComments(data.comments);
+                    }
+                }
+            );
+        }
+    };
