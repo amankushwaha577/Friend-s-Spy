@@ -52,3 +52,31 @@ class Signup extends Component {
             return false;
         }
     };
+
+    clickSubmit = event => {
+        event.preventDefault();
+        const { name, email, password } = this.state;
+        const user = {
+            name,
+            email,
+            password
+        };
+        // console.log(user);
+        if (this.state.recaptcha) {
+            signup(user).then(data => {
+                if (data.error) this.setState({ error: data.error });
+                else
+                    this.setState({
+                        error: "",
+                        name: "",
+                        email: "",
+                        password: "",
+                        open: true
+                    });
+            });
+        } else {
+            this.setState({
+                error: "What day is today? Please write a correct answer!"
+            });
+        }
+    };
