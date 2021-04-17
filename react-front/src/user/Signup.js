@@ -131,3 +131,47 @@ class Signup extends Component {
             </button>
         </form>
     );
+
+
+    
+
+    
+
+    
+
+    
+
+    render() {
+        const { name, email, password, error, open, recaptcha } = this.state;
+        return (
+            <div className="container">
+                <h2 className="mt-5 mb-5">Signup</h2>
+
+                <hr />
+                <SocialLogin />
+
+                <hr />
+                <br />
+
+                <div
+                    className="alert alert-danger"
+                    style={{ display: error ? "" : "none" }}
+                >
+                    {error}
+                </div>
+
+                <div
+                    className="alert alert-info"
+                    style={{ display: open ? "" : "none" }}
+                >
+                    New account is successfully created. Please{" "}
+                    <Link to="/signin">Sign In</Link>.
+                </div>
+
+                {this.signupForm(name, email, password, recaptcha)}
+            </div>
+        );
+    }
+}
+
+export default Signup;
