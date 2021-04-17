@@ -29,3 +29,16 @@ class Profile extends Component {
     });
     return match;
   };
+
+  clickFollowButton = callApi => {
+    const userId = isAuthenticated().user._id;
+    const token = isAuthenticated().token;
+
+    callApi(userId, token, this.state.user._id).then(data => {
+      if (data.error) {
+        this.setState({ error: data.error });
+      } else {
+        this.setState({ user: data, following: !this.state.following });
+      }
+    });
+  };
