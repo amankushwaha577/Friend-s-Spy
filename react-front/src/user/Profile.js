@@ -86,3 +86,19 @@ class Profile extends Component {
           user._id
         }?${new Date().getTime()}`
       : DefaultProfile;
+
+
+      
+    return (
+      <div className="container">
+        <h2 className="mt-5 mb-5">Profile</h2>
+        <div className="row">
+          <div className="col-md-4">
+            <img
+              style={{ height: "200px", width: "auto" }}
+              className="img-thumbnail"
+              src={photoUrl}
+              onError={i => (i.target.src = `${DefaultProfile}`)}
+              alt={user.name}
+            />
+          </div>
