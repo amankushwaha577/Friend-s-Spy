@@ -122,3 +122,68 @@ class Signin extends Component {
             </button>
         </form>
     );
+
+
+    
+
+   
+
+   
+
+    
+
+    render() {
+        const {
+            email,
+            password,
+            error,
+            redirectToReferer,
+            loading,
+            recaptcha
+        } = this.state;
+
+        if (redirectToReferer) {
+            return <Redirect to="/" />;
+        }
+
+        return (
+            <div className="container">
+                <h2 className="mt-5 mb-5">SignIn</h2>
+                <hr />
+                <SocialLogin />
+
+                <hr />
+                <br />
+
+                <div
+                    className="alert alert-danger"
+                    style={{ display: error ? "" : "none" }}
+                >
+                    {error}
+                </div>
+
+                {loading ? (
+                    <div className="jumbotron text-center">
+                        <h2>Loading...</h2>
+                    </div>
+                ) : (
+                    ""
+                )}
+
+                {this.signinForm(email, password, recaptcha)}
+
+                <p>
+                    <Link
+                        to="/forgot-password"
+                        className="btn btn-raised btn-danger"
+                    >
+                        {" "}
+                        Forgot Password
+                    </Link>
+                </p>
+            </div>
+        );
+    }
+}
+
+export default Signin;
