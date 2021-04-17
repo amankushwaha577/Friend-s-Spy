@@ -55,3 +55,19 @@ class Profile extends Component {
       }
     });
   };
+
+  loadPosts = userId => {
+    const token = isAuthenticated().token;
+    listByUser(userId, token).then(data => {
+      if (data.error) {
+        console.log(data.error);
+      } else {
+        this.setState({ posts: data });
+      }
+    });
+  };
+
+  componentDidMount() {
+    const userId = this.props.match.params.userId;
+    this.init(userId);
+  }
