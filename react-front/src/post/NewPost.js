@@ -111,3 +111,45 @@ class NewPost extends Component {
             </button>
         </form>
     );
+
+
+    render() {
+        const {
+            title,
+            body,
+            photo,
+            user,
+            error,
+            loading,
+            redirectToProfile
+        } = this.state;
+
+        if (redirectToProfile) {
+            return <Redirect to={`/user/${user._id}`} />;
+        }
+
+        return (
+            <div className="container">
+                <h2 className="mt-5 mb-5">Create a new post</h2>
+                <div
+                    className="alert alert-danger"
+                    style={{ display: error ? "" : "none" }}
+                >
+                    {error}
+                </div>
+
+                {loading ? (
+                    <div className="jumbotron text-center">
+                        <h2>Loading...</h2>
+                    </div>
+                ) : (
+                    ""
+                )}
+
+                {this.newPostForm(title, body)}
+            </div>
+        );
+    }
+}
+
+export default NewPost;
