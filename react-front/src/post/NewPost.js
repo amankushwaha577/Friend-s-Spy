@@ -70,3 +70,44 @@ class NewPost extends Component {
             });
         }
     };
+
+
+    newPostForm = (title, body) => (
+        <form>
+            <div className="form-group">
+                <label className="text-muted">Post Photo</label>
+                <input
+                    onChange={this.handleChange("photo")}
+                    type="file"
+                    accept="image/*"
+                    className="form-control"
+                />
+            </div>
+            <div className="form-group">
+                <label className="text-muted">Title</label>
+                <input
+                    onChange={this.handleChange("title")}
+                    type="text"
+                    className="form-control"
+                    value={title}
+                />
+            </div>
+
+            <div className="form-group">
+                <label className="text-muted">Body</label>
+                <textarea
+                    onChange={this.handleChange("body")}
+                    type="text"
+                    className="form-control"
+                    value={body}
+                />
+            </div>
+
+            <button
+                onClick={this.clickSubmit}
+                className="btn btn-raised btn-primary"
+            >
+                Create Post
+            </button>
+        </form>
+    );
