@@ -126,3 +126,59 @@ class EditPost extends Component {
             </button>
         </form>
     );
+
+
+    render() {
+        const {
+            id,
+            title,
+            body,
+            redirectToProfile,
+            error,
+            loading
+        } = this.state;
+
+        if (redirectToProfile) {
+            return <Redirect to={`/user/${isAuthenticated().user._id}`} />;
+        }
+
+        return (
+            <div className="container">
+                <h2 className="mt-5 mb-5">{title}</h2>
+
+                <div
+                    className="alert alert-danger"
+                    style={{ display: error ? "" : "none" }}
+                >
+                    {error}
+                </div>
+
+                {loading ? (
+                    <div className="jumbotron text-center">
+                        <h2>Loading...</h2>
+                    </div>
+                ) : (
+                    ""
+                )}
+
+                <img
+                    style={{ height: "200px", width: "auto" }}
+                    className="img-thumbnail"
+                    src={`${
+                        process.env.REACT_APP_API_URL
+                    }/post/photo/${id}?${new Date().getTime()}`}
+                    onError={i => (i.target.src = `${DefaultPost}`)}
+                    alt={title}
+                />
+
+                {isAuthenticated().user.role === "admin" &&
+                    this.editPostForm(title, body)}
+
+                {isAuthenticated().user._id === id &&
+                    this.editPostForm(title, body)}
+            </div>
+        );
+    }
+}
+
+export default EditPost;
