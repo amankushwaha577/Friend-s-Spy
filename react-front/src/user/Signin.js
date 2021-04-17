@@ -80,3 +80,45 @@ class Signin extends Component {
             });
         }
     };
+
+    signinForm = (email, password, recaptcha) => (
+        <form>
+            <div className="form-group">
+                <label className="text-muted">Email</label>
+                <input
+                    onChange={this.handleChange("email")}
+                    type="email"
+                    className="form-control"
+                    value={email}
+                />
+            </div>
+            <div className="form-group">
+                <label className="text-muted">Password</label>
+                <input
+                    onChange={this.handleChange("password")}
+                    type="password"
+                    className="form-control"
+                    value={password}
+                />
+            </div>
+
+            <div className="form-group">
+                <label className="text-muted">
+                    {recaptcha ? "Thanks. You got it!" : "What day is today?"}
+                </label>
+
+                <input
+                    onChange={this.recaptchaHandler}
+                    type="text"
+                    className="form-control"
+                />
+            </div>
+
+            <button
+                onClick={this.clickSubmit}
+                className="btn btn-raised btn-primary"
+            >
+                Submit
+            </button>
+        </form>
+    );
