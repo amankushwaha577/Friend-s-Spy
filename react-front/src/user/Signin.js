@@ -52,3 +52,31 @@ class Signin extends Component {
             return false;
         }
     };
+
+    clickSubmit = event => {
+        event.preventDefault();
+        this.setState({ loading: true });
+        const { email, password } = this.state;
+        const user = {
+            email,
+            password
+        };
+        // console.log(user);
+        if (this.state.recaptcha) {
+            signin(user).then(data => {
+                if (data.error) {
+                    this.setState({ error: data.error, loading: false });
+                } else {
+                    // authenticate
+                    authenticate(data, () => {
+                        this.setState({ redirectToReferer: true });
+                    });
+                }
+            });
+        } else {
+            this.setState({
+                loading: false,
+                error: "What day is today? Please write a correct answer!"
+            });
+        }
+    };
