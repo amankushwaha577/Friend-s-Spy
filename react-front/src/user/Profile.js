@@ -71,3 +71,18 @@ class Profile extends Component {
     const userId = this.props.match.params.userId;
     this.init(userId);
   }
+
+  componentWillReceiveProps(props) {
+    const userId = props.match.params.userId;
+    this.init(userId);
+  }
+
+  render() {
+    const { redirectToSignin, user, posts } = this.state;
+    if (redirectToSignin) return <Redirect to="/signin" />;
+
+    const photoUrl = user._id
+      ? `${process.env.REACT_APP_API_URL}/user/photo/${
+          user._id
+        }?${new Date().getTime()}`
+      : DefaultProfile;
