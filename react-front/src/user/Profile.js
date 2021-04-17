@@ -19,3 +19,13 @@ class Profile extends Component {
       posts: []
     };
   }
+
+  // check follow
+  checkFollow = user => {
+    const jwt = isAuthenticated();
+    const match = user.followers.find(follower => {
+      // one id has many other ids (followers) and vice versa
+      return follower._id === jwt.user._id;
+    });
+    return match;
+  };
