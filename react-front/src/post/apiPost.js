@@ -105,3 +105,19 @@ export const like = (userId, token, postId) => {
         })
         .catch(err => console.log(err));
 };
+
+export const unlike = (userId, token, postId) => {
+    return fetch(`${process.env.REACT_APP_API_URL}/post/unlike`, {
+        method: "PUT",
+        headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`
+        },
+        body: JSON.stringify({ userId, postId })
+    })
+        .then(response => {
+            return response.json();
+        })
+        .catch(err => console.log(err));
+};
