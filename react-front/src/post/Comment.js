@@ -53,3 +53,17 @@ class Comment extends Component {
             );
         }
     };
+
+    deleteComment = comment => {
+        const userId = isAuthenticated().user._id;
+        const token = isAuthenticated().token;
+        const postId = this.props.postId;
+
+        uncomment(userId, token, postId, comment).then(data => {
+            if (data.error) {
+                console.log(data.error);
+            } else {
+                this.props.updateComments(data.comments);
+            }
+        });
+    };
