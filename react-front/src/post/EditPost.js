@@ -39,3 +39,19 @@ class EditPost extends Component {
         const postId = this.props.match.params.postId;
         this.init(postId);
     }
+
+    isValid = () => {
+        const { title, body, fileSize } = this.state;
+        if (fileSize > 1000000) {
+            this.setState({
+                error: "File size should be less than 100kb",
+                loading: false
+            });
+            return false;
+        }
+        if (title.length === 0 || body.length === 0) {
+            this.setState({ error: "All fields are required", loading: false });
+            return false;
+        }
+        return true;
+    };
