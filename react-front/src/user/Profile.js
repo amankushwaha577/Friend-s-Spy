@@ -42,3 +42,16 @@ class Profile extends Component {
       }
     });
   };
+
+  init = userId => {
+    const token = isAuthenticated().token;
+    read(userId, token).then(data => {
+      if (data.error) {
+        this.setState({ redirectToSignin: true });
+      } else {
+        let following = this.checkFollow(data);
+        this.setState({ user: data, following });
+        this.loadPosts(data._id);
+      }
+    });
+  };
