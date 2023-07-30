@@ -71,7 +71,6 @@ class NewPost extends Component {
         }
     };
 
-
     newPostForm = (title, body) => (
         <form>
             <div className="form-group">
@@ -111,7 +110,6 @@ class NewPost extends Component {
             </button>
         </form>
     );
-
 
     render() {
         const {

@@ -22,8 +22,6 @@ class ForgotPassword extends Component {
         });
     };
 
-
-    
     render() {
         return (
             <div className="container">

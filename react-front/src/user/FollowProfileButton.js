@@ -10,8 +10,6 @@ class FollowProfileButton extends Component {
         this.props.onButtonClick(unfollow);
     };
 
-    
-
     render() {
         return (
             <div className="d-inline-block">

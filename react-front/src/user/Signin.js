@@ -123,15 +123,6 @@ class Signin extends Component {
         </form>
     );
 
-
-    
-
-   
-
-   
-
-    
-
     render() {
         const {
             email,

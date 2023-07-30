@@ -87,8 +87,6 @@ class Profile extends Component {
         }?${new Date().getTime()}`
       : DefaultProfile;
 
-
-      
     return (
       <div className="container">
         <h2 className="mt-5 mb-5">Profile</h2>
@@ -102,6 +100,7 @@ class Profile extends Component {
               alt={user.name}
             />
           </div>
+
           <div className="col-md-8">
             <div className="lead mt-2">
               <p>Hello {user.name}</p>
@@ -134,21 +133,7 @@ class Profile extends Component {
               />
             )}
 
-            
-
-  
-
-  
-
-  
-
-
-
-
-
-          
-
-<div>
+            <div>
               {isAuthenticated().user &&
                 isAuthenticated().user.role === "admin" && (
                   <div class="card mt-5">

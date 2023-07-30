@@ -122,20 +122,6 @@ export const unlike = (userId, token, postId) => {
         .catch(err => console.log(err));
 };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 export const comment = (userId, token, postId, comment) => {
     return fetch(`${process.env.REACT_APP_API_URL}/post/comment`, {
         method: "PUT",

@@ -18,7 +18,6 @@ class SocialLogin extends Component {
             tokenId: tokenId
         };
 
-
         socialLogin(user).then(data => {
             // console.log('signin data: ', data);
             if (data.error) {
@@ -33,9 +32,6 @@ class SocialLogin extends Component {
         });
     };
 
-
-    
-    
     render() {
         // redirect
         const { redirectToReferrer } = this.state;

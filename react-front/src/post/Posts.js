@@ -36,7 +36,6 @@ class Posts extends Component {
         this.loadPosts(this.state.page - number);
     };
 
-
     renderPosts = posts => {
         return (
             <div className="row">

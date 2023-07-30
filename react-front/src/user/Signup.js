@@ -132,15 +132,6 @@ class Signup extends Component {
         </form>
     );
 
-
-    
-
-    
-
-    
-
-    
-
     render() {
         const { name, email, password, error, open, recaptcha } = this.state;
         return (

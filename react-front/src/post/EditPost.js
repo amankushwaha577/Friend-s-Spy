@@ -18,7 +18,6 @@ class EditPost extends Component {
         };
     }
 
-
     init = postId => {
         singlePost(postId).then(data => {
             if (data.error) {
@@ -87,6 +86,7 @@ class EditPost extends Component {
             });
         }
     };
+
     editPostForm = (title, body) => (
         <form>
             <div className="form-group">
@@ -126,7 +126,6 @@ class EditPost extends Component {
             </button>
         </form>
     );
-
 
     render() {
         const {

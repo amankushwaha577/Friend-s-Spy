@@ -68,7 +68,6 @@ class Comment extends Component {
         });
     };
 
-
     deleteConfirmed = comment => {
         let answer = window.confirm(
             "Are you sure you want to delete your comment?"
