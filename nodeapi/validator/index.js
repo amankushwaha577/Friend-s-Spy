@@ -21,6 +21,7 @@ exports.createPostValidator = (req, res, next) => {
     // proceed to next middleware
     next();
 };
+
 exports.userSignupValidator = (req, res, next) => {
     // name is not null and between 4-10 characters
     req.check('name', 'Name is required').notEmpty();
@@ -32,8 +33,7 @@ exports.userSignupValidator = (req, res, next) => {
             min: 4,
             max: 2000
         });
-
-         // check for password
+    // check for password
     req.check('password', 'Password is required').notEmpty();
     req.check('password')
         .isLength({ min: 6 })
@@ -50,6 +50,7 @@ exports.userSignupValidator = (req, res, next) => {
     // proceed to next middleware
     next();
 };
+
 exports.userSigninValidator = (request, response, next) => {
     request
         .check('email', 'Email must be between 3 to 32 characters')
@@ -73,6 +74,7 @@ exports.userSigninValidator = (request, response, next) => {
     }
     next();
 };
+
 exports.passwordResetValidator = (req, res, next) => {
     // check for password
     req.check('newPassword', 'Password is required').notEmpty();

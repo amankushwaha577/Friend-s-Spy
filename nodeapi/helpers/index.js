@@ -12,8 +12,6 @@ exports.sendEmail = emailData => {
       user: "masterjupiter2015@gmail.com",
       pass: "kshzlmomlthllktq"
     }
-
-    
   });
   return transporter
     .sendMail(emailData)

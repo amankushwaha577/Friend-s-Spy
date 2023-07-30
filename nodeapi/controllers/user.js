@@ -19,7 +19,6 @@ exports.userById = (req, res, next, id) => {
         });
 };
 
-
 exports.hasAuthorization = (req, res, next) => {
     let sameUser = req.profile && req.auth && req.profile._id == req.auth._id;
     let adminUser = req.profile && req.auth && req.auth.role === 'admin';
@@ -37,7 +36,6 @@ exports.hasAuthorization = (req, res, next) => {
     next();
 };
 
-
 exports.allUsers = (req, res) => {
     User.find((err, users) => {
         if (err) {
@@ -48,7 +46,6 @@ exports.allUsers = (req, res) => {
         res.json(users);
     }).select('name email updated created role');
 };
-
 
 exports.getUser = (req, res) => {
     req.profile.hashed_password = undefined;
@@ -71,14 +68,6 @@ exports.getUser = (req, res) => {
 //         res.json({ user });
 //     });
 // };
-
-
-
-
-
-
-
-
 
 exports.updateUser = (req, res, next) => {
     let form = new formidable.IncomingForm();
@@ -117,9 +106,6 @@ exports.updateUser = (req, res, next) => {
     });
 };
 
-
-
-
 exports.userPhoto = (req, res, next) => {
     if (req.profile.photo.data) {
         res.set(('Content-Type', req.profile.photo.contentType));
@@ -127,7 +113,6 @@ exports.userPhoto = (req, res, next) => {
     }
     next();
 };
-
 
 exports.deleteUser = (req, res, next) => {
     let user = req.profile;
@@ -141,7 +126,6 @@ exports.deleteUser = (req, res, next) => {
     });
 };
 
-
 // follow unfollow
 exports.addFollowing = (req, res, next) => {
     User.findByIdAndUpdate(req.body.userId, { $push: { following: req.body.followId } }, (err, result) => {
@@ -151,7 +135,6 @@ exports.addFollowing = (req, res, next) => {
         next();
     });
 };
-
 
 exports.addFollower = (req, res) => {
     User.findByIdAndUpdate(req.body.followId, { $push: { followers: req.body.userId } }, { new: true })
@@ -169,8 +152,6 @@ exports.addFollower = (req, res) => {
         });
 };
 
-
-
 // remove follow unfollow
 exports.removeFollowing = (req, res, next) => {
     User.findByIdAndUpdate(req.body.userId, { $pull: { following: req.body.unfollowId } }, (err, result) => {
@@ -180,7 +161,6 @@ exports.removeFollowing = (req, res, next) => {
         next();
     });
 };
-
 
 exports.removeFollower = (req, res) => {
     User.findByIdAndUpdate(req.body.unfollowId, { $pull: { followers: req.body.userId } }, { new: true })
@@ -197,14 +177,6 @@ exports.removeFollower = (req, res) => {
             res.json(result);
         });
 };
-
-
-
-
-
-
-
-
 
 exports.findPeople = (req, res) => {
     let following = req.profile.following;

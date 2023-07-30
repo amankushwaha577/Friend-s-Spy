@@ -10,8 +10,6 @@ const cors = require('cors');
 const dotenv = require('dotenv');
 dotenv.config();
 
-
-
 // db
 // mongodb://kaloraat:dhungel8@ds257054.mlab.com:57054/nodeapi
 // MONGO_URI=mongodb://localhost/nodeapi
@@ -44,7 +42,6 @@ app.get('/api', (req, res) => {
     });
 });
 
-
 // middleware -
 app.use(morgan('dev'));
 app.use(bodyParser.json());
@@ -59,8 +56,6 @@ app.use(function(err, req, res, next) {
         res.status(401).json({ error: 'Unauthorized!' });
     }
 });
-
-
 
 const port = process.env.PORT || 8080;
 app.listen(port, () => {
