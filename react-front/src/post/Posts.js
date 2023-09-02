@@ -59,16 +59,17 @@ class Posts extends Component {
                   className="img-thunbnail mb-3"
                   style={{ height: "200px", width: "100%" }}
                 />
-                <h5 className="card-title">{post.title}</h5>
-                <p className="card-text">{post.body.substring(0, 100)}</p>
+                <h5 className="card-title" style={{fontFamily:"Bahnschrift SemiBold"}}>{post.title}</h5>
+                <p className="card-text" style={{fontFamily:"Segoe Print"}}>{post.body.substring(0, 100)}</p>
                 <br />
-                <p className="font-italic mark">
+                <p className="font-italic mark" style={{fontFamily:"Century Gothic"}}>
                   Posted by <Link to={`${posterId}`}>{posterName} </Link>
                   on {new Date(post.created).toDateString()}
                 </p>
                 <Link
                   to={`/post/${post._id}`}
                   className="btn btn-raised btn-primary btn-sm"
+                  style={{fontFamily:"Segoe UI"}}
                 >
                   Read more
                 </Link>
@@ -93,6 +94,8 @@ class Posts extends Component {
         {page > 1 ? (
           <button
             className="btn btn-raised btn-warning mr-5 mt-5 mb-5"
+            style={{fontFamily:"Trebuchet MS"}}
+
             onClick={() => this.loadLess(1)}
           >
             Previous ({this.state.page - 1})
@@ -103,7 +106,7 @@ class Posts extends Component {
 
         {posts.length ? (
           <button
-            className="btn btn-raised mt-5 mb-5" style ={{backgroundColor: "red", color:"white"}}
+            className="btn btn-raised mt-5 mb-5" style ={{backgroundColor: "red", color:"white",fontFamily:"Trebuchet MS"}}
             onClick={() => this.loadMore(1)}
           >
             Next ({page + 1})
