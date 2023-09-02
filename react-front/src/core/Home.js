@@ -4,7 +4,7 @@ import Posts from "../post/Posts";
 const Home = () => (
 
   
-  <div style={{marginTop:"65px"}}>
+  <div style={{marginTop:"60px"}}>
  
     <div className="jumbotron">
       <h1 className="font-weight-bold" style={{fontFamily: "Lucida Handwriting"}}>
