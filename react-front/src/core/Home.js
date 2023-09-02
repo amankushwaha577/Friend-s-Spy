@@ -6,11 +6,10 @@ const Home = () => (
     
     <div className="jumbotron">
       <h2 className="font-weight-bold">
-        React Node MongoDB Social Network App
+        FRIEND'S SPY
       </h2>
       <p className="lead">
-        Node API, React web app, Authentication, User Profile, Follow/Unfollow,
-        Like/Unlike, Comments, Social Login and more
+      Let's connect to the world together
       </p>
     </div>
     <div className="container">
