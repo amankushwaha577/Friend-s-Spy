@@ -2,13 +2,15 @@ import React from "react";
 import Posts from "../post/Posts";
 
 const Home = () => (
-  <div>
-    
+
+  
+  <div style={{marginTop:"65px"}}>
+ 
     <div className="jumbotron">
       <h1 className="font-weight-bold" style={{fontFamily: "Lucida Handwriting"}}>
         FRIEND'S SPY
       </h1>
-      
+
       <p className="lead">
       Let's connect to the world together
       </p>
