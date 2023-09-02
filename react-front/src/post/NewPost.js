@@ -127,7 +127,7 @@ class NewPost extends Component {
         }
 
         return (
-            <div className="container">
+            <div className="container jumbotron" style = {{marginTop:"100px", fontFamily:"Copperplate Gothic Light"}}>
                 <h2 className="mt-5 mb-5">Create a new post</h2>
                 <div
                     className="alert alert-danger"
