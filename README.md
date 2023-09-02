@@ -35,12 +35,11 @@ Mongo DB
 - ![#c5f015](https://via.placeholder.com/15/c5f015/000000?text=+) `Bootstrap4`
 - ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) `Java Script`
 
+
+<br>
+
 # Online Reachability:
-FOR BUSINESS
 
-```sh
-
-```
 
 TECHNICAL SIDES OF FRIEND'S SPY
 ```sh
