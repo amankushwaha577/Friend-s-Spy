@@ -3,6 +3,7 @@ import Posts from "../post/Posts";
 
 const Home = () => (
   <div>
+    
     <div className="jumbotron">
       <h2 className="font-weight-bold">
         React Node MongoDB Social Network App
