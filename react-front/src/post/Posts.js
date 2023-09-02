@@ -49,7 +49,8 @@ class Posts extends Component {
           }
 
           return (
-            <div className="card col-md-4" key={i}>
+            // <div className="card col-md-4" key={i}>
+            <div className="card mb-3" key={i} style={{flex: "0 0 33.33333%", maxWidth: "30%", marginRight: "3.33%"}}>
               <div className="card-body">
                 <img
                   src={`${process.env.REACT_APP_API_URL}/post/photo/${post._id}`}
