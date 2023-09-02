@@ -13,14 +13,6 @@ Founded By Team Friend's Spy,The mission of our Web Application is to give peopl
 
 
  
-# Team Friend's Spy
-| Name | Github Username | 
-| ------ | ------ |
-| Aman Kushwaha | [https://github.com/amankushwaha577/]  |
-| Aman Saxena | [https://github.com/amanS2206/] |
-| Akarshit Srivastava | [https://github.com/akarshit2001/] |
-| Akshat Sinha | [https://github.com/Akshat555624] |
-| Harshit Saxena | [https://github.com/saxenaharshit/] |
 
  
 
@@ -62,9 +54,25 @@ TECHNICAL SIDES OF FRIEND'S SPY
                                                                   +
                                     Update or Delete anyone-s Post | Update or Delete any User
 5. Custom reCAPTCHA
-6. Real Time Communication
+6. Real Time Communication using Socket.io
+7. Secure DataBase Using MongoDB Database.
+8. Node.js API development for Backend Tool.
 
 ```
+
+
+<br>
+
+# Team Friend's Spy
+| Name | Github Username | 
+| ------ | ------ |
+| Aman Kushwaha | [https://github.com/amankushwaha577/]  |
+| Aman Saxena | [https://github.com/amanS2206/] |
+| Akarshit Srivastava | [https://github.com/akarshit2001/] |
+| Akshat Sinha | [https://github.com/Akshat555624] |
+| Harshit Saxena | [https://github.com/saxenaharshit/] |
+
+<br>
 
 License
 ----
