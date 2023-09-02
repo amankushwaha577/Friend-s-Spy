@@ -8,11 +8,11 @@ class ProfileTabs extends Component {
         return (
             <div>
                 <div className="row">
-                    <div className="col-md-4">
-                        <h3 className="text-primary">
+                    <div className="col-md-4" >
+                        <h2 className="text-white font-weight-bold" style = {{fontFamily:"Bahnschrift SemiBold"}}>
                             {followers.length} Followers
-                        </h3>
-                        <hr />
+                        </h2>
+                        <hr style={{ color: "red", backgroundColor: "red",height: 5 }}/>
                         {followers.map((person, i) => (
                             <div key={i}>
                                 <div>
@@ -34,9 +34,9 @@ class ProfileTabs extends Component {
                                             alt={person.name}
                                         />
                                         <div>
-                                            <p className="lead">
+                                            <h4 className="text-white">
                                                 {person.name}
-                                            </p>
+                                            </h4>
                                         </div>
                                     </Link>
                                 </div>
@@ -45,10 +45,10 @@ class ProfileTabs extends Component {
                     </div>
 
                     <div className="col-md-4">
-                        <h3 className="text-primary">
+                        <h2 className="text-white font-weight-bold" style = {{fontFamily:"Bahnschrift SemiBold"}}>
                             {following.length} Following
-                        </h3>
-                        <hr />
+                        </h2>
+                        <hr style={{ color: "red", backgroundColor: "red",height: 5 }}/>
                         {following.map((person, i) => (
                             <div key={i}>
                                 <div>
@@ -70,9 +70,9 @@ class ProfileTabs extends Component {
                                             alt={person.name}
                                         />
                                         <div>
-                                            <p className="lead">
+                                            <h4 className="text-white">
                                                 {person.name}
-                                            </p>
+                                            </h4>
                                         </div>
                                     </Link>
                                 </div>
@@ -81,17 +81,17 @@ class ProfileTabs extends Component {
                     </div>
 
                     <div className="col-md-4">
-                        <h3 className="text-primary">{posts.length} Posts</h3>
-                        <hr />
+                        <h2 className="text-white font-weight-bold" style = {{fontFamily:"Bahnschrift SemiBold"}}>{posts.length} Posts</h2>
+                        <hr style={{ color: "red", backgroundColor: "red",height: 5 }}/>
                         {posts.map((post, i) => (
                             <div key={i}>
-                                <div>
+                                <h3 class="alert alert-primary font-weight-bold" role="alert" style = {{fontFamily:"Lucida Console"}}>
                                     <Link to={`/post/${post._id}`}>
                                         <div>
-                                            <p className="lead">{post.title}</p>
+                                            <p>{post.title}</p>
                                         </div>
                                     </Link>
-                                </div>
+                                </h3>
                             </div>
                         ))}
                     </div>

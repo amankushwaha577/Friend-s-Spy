@@ -86,8 +86,8 @@ class Profile extends Component {
       : DefaultProfile;
 
     return (
-      <div className="container">
-        <h2 className="mt-5 mb-5">Profile</h2>
+      <div className="container text-white" style = {{marginTop:"90px", fontFamily:"Comic Sans MS"}}>
+        <h1 className="mt-5 mb-5 font-weight-bold" style = {{fontFamily:"Copperplate Gothic Light"}}>Profile</h1>
         <div className="row">
           <div className="col-md-4">
             <img
@@ -125,7 +125,7 @@ class Profile extends Component {
               {isAuthenticated().user && isAuthenticated().user.role === 'admin' && (
                 <div class="card mt-5">
                   <div className="card-body">
-                    <h5 className="card-title">Admin</h5>
+                    <h5 className="card-title text-danger font-weight-bold">Admin</h5>
                     <p className="mb-2 text-danger">Edit/Delete as an Admin</p>
                     <Link className="btn btn-raised btn-success mr-5" to={`/user/edit/${user._id}`}>
                       Edit Profile
@@ -140,7 +140,7 @@ class Profile extends Component {
         <div className="row">
           <div className="col md-12 mt-5 mb-5">
             <hr />
-            <p className="lead">{user.about}</p>
+            <p className="lead text-white font-weight-bold">{user.about}</p>
             <hr />
 
             <ProfileTabs followers={user.followers} following={user.following} posts={posts} />

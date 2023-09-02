@@ -49,7 +49,7 @@ class FindPeople extends Component {
     renderUsers = users => (
         <div className="row">
             {users.map((user, i) => (
-                <div className="card col-md-4" key={i}>
+                <div className="card col-md-3" key={i} style={{flex: "0 0 33.33333%", maxWidth: "30%", marginRight: "3.33%"}}>
                     <img
                         style={{ height: "200px", width: "auto" }}
                         className="img-thumbnail"
@@ -71,7 +71,7 @@ class FindPeople extends Component {
 
                         <button
                             onClick={() => this.clickFollow(user, i)}
-                            className="btn btn-raised btn-info float-right btn-sm"
+                            className="btn btn-raised float-right btn-sm" style ={{background:"blue",color:"white"}}
                         >
                             Follow
                         </button>
@@ -84,8 +84,8 @@ class FindPeople extends Component {
     render() {
         const { users, open, followMessage } = this.state;
         return (
-            <div className="container">
-                <h2 className="mt-5 mb-5">Find People</h2>
+            <div className="container"  style = {{marginTop:"100px", fontFamily:"Copperplate Gothic Light"}}>
+                <h1 className="mt-5 mb-5 text-white font-weight-bold">Find People</h1>
 
                 {open && (
                     <div className="alert alert-success">{followMessage}</div>
