@@ -8,8 +8,8 @@ const isActive = (history, path) => {
 };
 
 const Menu = ({ history }) => (
-    <div>
-        <ul className="nav nav-tabs bg-primary">
+    <div style={{backgroundColor: "black"}}>
+        <ul className="nav nav-tabs">
             <li className="nav-item">
                 <Link className="nav-link" style={isActive(history, '/')} to="/">
                     Home
@@ -18,7 +18,7 @@ const Menu = ({ history }) => (
 
             <li className="nav-item">
                 <Link
-                    className={history.location.pathname === '/users' ? 'active nav-link' : 'not-active nav-link'}
+                    className="nav-link" style={isActive(history, `/post/Users`)} 
                     to="/users"
                 >
                     Users
