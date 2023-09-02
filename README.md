@@ -48,15 +48,18 @@ TECHNICAL SIDES OF FRIEND'S SPY
 2. Rock Solid Authentication with Password Forgot/Password Reset using JWT
 3. Application LogIn using JWT
 4. POST CRUD Operations [ Users ] : Post Upload,Update,Delete | Comment on Post, Comment on Post Delete |
-                                    Post like and unlike | User follow and unfollow | User Posts Relationships
+                                    Post like and unlike | User follow and unfollow |
+                                    User Posts Relationships
    POST CRUD Operations [ Admin ] : Post Upload,Update,Delete | Comment on Post, Comment on Post Delete |
-                                    Post like and unlike | Admin follow and unfollow | Admin Posts Relationships
+                                    Post like and unlike | Admin follow and unfollow |
+                                    Admin Posts Relationships
                                                                   +
                                     Update or Delete anyone-s Post | Update or Delete any User
 5. Custom reCAPTCHA
 6. Real Time Communication using Socket.io
 7. Secure DataBase Using MongoDB Database.
 8. Node.js API development for Backend Tool.
+9. SEO (Server Side Rendering) with NextJs
 
 ```
 
