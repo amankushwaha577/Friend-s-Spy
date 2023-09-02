@@ -14,27 +14,22 @@ Founded By Team Friend's Spy,The mission of our Web Application is to give peopl
 
  
 
- 
+ <br>
 
-# Software Tech Specs
-### BackEnd Tech
-```diff
-- React JS
-- Node JS
-- Next JS
-- Express JS
-````
-### DataBase Tech
+# LANGUAGES, FRAMEWORKS, LIBRARY AND DATABASE
+
+- ![#BE0DF2](https://via.placeholder.com/15/1589F0/000000?text=+) `REACT.js`
+- ![#1512F8](https://via.placeholder.com/15/1589F0/000000?text=+) `NODE.js`
+- ![#c2E010](https://via.placeholder.com/15/c5f015/000000?text=+) `NEXT.js`
+- ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) `Java Script`
+- ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `HTML5, CSS3 and Bootstrap4`
+- ![#5DF20D](https://via.placeholder.com/15/f03c15/000000?text=+) `Socket.io`
+
+
+### DataBase 
 ```diff
 Mongo DB
 ```
-
- 
-### Front-End Tech
-- ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `CSS3 and HTML5`
-- ![#c5f015](https://via.placeholder.com/15/c5f015/000000?text=+) `Bootstrap4`
-- ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) `Java Script`
-
 
 <br>
 
