@@ -83,7 +83,7 @@ class Posts extends Component {
     const { posts, page } = this.state;
     return (
       <div className="container">
-        <h2 className="mt-5 mb-5">
+        <h2 className="mt-5 mb-5 text-white">
           {!posts.length ? "No more posts!" : "Recent Posts"}
         </h2>
 

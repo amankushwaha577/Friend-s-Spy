@@ -5,9 +5,9 @@ const Home = () => (
   <div>
     
     <div className="jumbotron">
-      <h2 className="font-weight-bold">
+      <h1 className="font-weight-bold" style={{fontFamily: "Lucida Handwriting"}}>
         FRIEND'S SPY
-      </h2>
+      </h1>
       <p className="lead">
       Let's connect to the world together
       </p>
