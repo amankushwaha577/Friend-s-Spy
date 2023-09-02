@@ -22,23 +22,26 @@ class Admin extends Component {
 
         return (
             <div>
-                <div className="jumbotron">
+                <div className="jumbotron" style = {{marginTop:"70px", fontFamily:"Copperplate Gothic Light"}}>
                     <h2>Admin Dashboard</h2>
-                    <p className="lead">Welcome to React Frontend</p>
+                    <p className="lead">Restric Users and Post</p>
                 </div>
                 <div className="container-fluid">
-                    <div className="row">
-                        <div className="col-md-6">
-                            <h2>Posts</h2>
-                            <hr />
-                            <Posts />
-                        </div>
-                        <div className="col-md-6">
-                            <h2>Users</h2>
-                            <hr />
+                    <div className="row" >
+                        <div className="col-md-8" style ={{margin:"10%", marginTop:"0%"}}>
+                            {/* <h2>Users</h2> */}
+                            {/* <hr /> */}
                             <Users />
                         </div>
                     </div>
+
+                    <div className="row">
+                        <div className="col-md-8" style ={{margin:"10%", marginTop:"0%"}}>
+                            {/* <h2>Posts</h2> */}
+                            <Posts/>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
         );
