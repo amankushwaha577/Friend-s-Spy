@@ -61,6 +61,8 @@ TECHNICAL SIDES OF FRIEND'S SPY
                                     Post like and unlike | Admin follow and unfollow | Admin Posts Relationships
                                                                   +
                                     Update or Delete anyone-s Post | Update or Delete any User
+5. Custom reCAPTCHA
+6. Real Time Communication
 
 ```
 
