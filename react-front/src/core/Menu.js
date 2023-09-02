@@ -103,7 +103,7 @@ const Menu = ({ history }) => (
             </Link>
           </li>
 
-          <li className="nav-item">
+          <li className="nav-item ml-auto">
             <span
               className="nav-link"
               style={{ cursor: "pointer", color: "#fff" }}
