@@ -1,7 +1,7 @@
 # ``` Friend's Spy ```
 Founded By Team Friend's Spy,The mission of our Web Application is to give people the power to build community and bring the world closer together. People will use Friend'Spy  to stay connected with friends and family, to discover what's going on in the world, and to share and express what matters to them.
 
-![Webp net-gifmaker](https://user-images.githubusercontent.com/53748350/265251874-e7d3b220-779b-44f2-a20d-718913897cae.gif)
+![Webp net-gifmaker](https://user-images.githubusercontent.com/53748350/265252183-65912f3f-7c96-4e9f-879c-aef475cfbc43.gif)
 
    - ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `Friend's Spy is a social media site, and its primary purpose is to connect people and allow people to share their thoughts with a big audience. Our Web App allows users to discover stories regarding today's biggest news and events, follow people or companies that post content they enjoy consuming, or simply communicate with friends. Additionally, PR teams and marketers can use friend's spy to increase brand awareness and delight their audience.`
 
