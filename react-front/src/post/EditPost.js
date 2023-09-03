@@ -88,7 +88,7 @@ class EditPost extends Component {
     };
 
     editPostForm = (title, body) => (
-        <form>
+        <form class="jumbotron mt-4">
             <div className="form-group">
                 <label className="text-muted">Post Photo</label>
                 <input
@@ -142,8 +142,8 @@ class EditPost extends Component {
         }
 
         return (
-            <div className="container">
-                <h2 className="mt-5 mb-5">{title}</h2>
+            <div className="container text-white font-weight-bold" style = {{marginTop:"100px", fontFamily:"Bahnschrift SemiBold"}}>
+                <h2 className="mt-5 mb-5" style = {{fontFamily:"Lucida Handwriting"}}>{title}</h2>
 
                 <div
                     className="alert alert-danger"
