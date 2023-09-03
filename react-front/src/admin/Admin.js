@@ -22,7 +22,7 @@ class Admin extends Component {
 
         return (
             <div>
-                <main role="main" class="container" style = {{marginTop:"70px", fontFamily:"Copperplate Gothic Light"}}>
+                <main role="main" class="container" style = {{marginTop:"100px", fontFamily:"Bahnschrift SemiBold"}}>
                      <div class="jumbotron">
                         <h1>Admin Dashboard</h1>
                         <p class="lead">Restric Users and Post</p>
