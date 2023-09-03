@@ -38,7 +38,7 @@ class Admin extends Component {
                     </div>
 
                     <div className="row">
-                        <div className="col-md-8" style ={{margin:"17%", marginTop:"-10%"}}>
+                        <div className="col-md-9" style ={{margin:"14%", marginTop:"-10%"}}>
                             {/* <h2>Posts</h2> */}
                             <Posts/>
                         </div>
