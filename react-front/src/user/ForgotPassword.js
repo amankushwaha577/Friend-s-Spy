@@ -24,7 +24,7 @@ class ForgotPassword extends Component {
 
     render() {
         return (
-            <div className="container">
+            <div className="container text-primary" style = {{marginTop:"100px", fontFamily:"Bahnschrift SemiBold"}}>
                 <h2 className="mt-5 mb-5">Ask for Password Reset</h2>
 
                 {this.state.message && (
