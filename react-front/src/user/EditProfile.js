@@ -110,7 +110,7 @@ class EditProfile extends Component {
   };
 
   signupForm = (name, email, password, about) => (
-    <form>
+    <form className="jumbotron">
       <div className="form-group">
         <label className="text-muted">Profile Photo</label>
         <input
@@ -187,8 +187,8 @@ class EditProfile extends Component {
       : DefaultProfile;
 
     return (
-      <div className="container">
-        <h2 className="mt-5 mb-5">Edit Profile</h2>
+      <div className="container text-white font-weight-bold" style = {{marginTop:"100px", fontFamily:"Bahnschrift SemiBold"}}>
+        <h2 className="mt-5 mb-3 font-weight-bold" style = {{fontFamily:"Copperplate Gothic Light"}}>EDIT PROFILE</h2>
         <div
           className="alert alert-danger"
           style={{ display: error ? "" : "none" }}
@@ -206,7 +206,7 @@ class EditProfile extends Component {
 
         <img
           style={{ height: "200px", width: "auto" }}
-          className="img-thumbnail"
+          className="img-thumbnail mb-3"
           src={photoUrl}
           onError={i => (i.target.src = `${DefaultProfile}`)}
           alt={name}
