@@ -82,7 +82,7 @@ class Signup extends Component {
     };
 
     signupForm = (name, email, password, recaptcha) => (
-        <form>
+        <form class= "jumbotron">
             <div className="form-group">
                 <label className="text-muted">Name</label>
                 <input
@@ -135,8 +135,8 @@ class Signup extends Component {
     render() {
         const { name, email, password, error, open, recaptcha } = this.state;
         return (
-            <div className="container">
-                <h2 className="mt-5 mb-5">Signup</h2>
+            <div className="container text-primary" style = {{marginTop:"100px", fontFamily:"Bahnschrift SemiBold"}}>
+                <h2 className="mt-5 mb-5">SIGN UP</h2>
 
                 <hr />
                 <SocialLogin />
