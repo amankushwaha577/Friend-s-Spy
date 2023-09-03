@@ -82,7 +82,7 @@ class Signin extends Component {
     };
 
     signinForm = (email, password, recaptcha) => (
-        <form>
+        <form class= "jumbotron">
             <div className="form-group">
                 <label className="text-muted">Email</label>
                 <input
@@ -138,8 +138,8 @@ class Signin extends Component {
         }
 
         return (
-            <div className="container">
-                <h2 className="mt-5 mb-5">SignIn</h2>
+            <div className="container text-primary" style = {{marginTop:"100px", fontFamily:"Bahnschrift SemiBold"}}>
+                <h2 className="mt-5 mb-5">SIGN IN</h2>
                 <hr />
                 <SocialLogin />
 
