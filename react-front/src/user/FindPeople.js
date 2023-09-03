@@ -51,7 +51,7 @@ class FindPeople extends Component {
             {users.map((user, i) => (
                 <div className="card col-md-3" key={i} style={{flex: "0 0 33.33333%", maxWidth: "30%", marginRight: "3.33%"}}>
                     <img
-                        style={{ height: "200px", width: "auto" }}
+                        style={{ height: "300px", width: "auto" }}
                         className="img-thumbnail"
                         src={`${process.env.REACT_APP_API_URL}/user/photo/${
                             user._id
