@@ -98,8 +98,8 @@ class SinglePost extends Component {
                     className="img-thunbnail mb-3"
                     style={{
                         height: '300px',
-                        width: '70%',
-                        objectFit: 'cover'
+                        width: '45%',
+                        border: "solid aqua 5px"
                     }}
                 />
 
@@ -178,7 +178,7 @@ class SinglePost extends Component {
 
         return (
             <div className="container text-white font-weight-bold" style = {{marginTop:"100px", fontFamily:"Bahnschrift SemiBold"}}>
-                <h2 className="display-2 mt-5 mb-5 font-weight-bold" style = {{fontFamily:"Copperplate Gothic Light"}}>{post.title}</h2>
+                <h2 className="display-2 mt-5 mb-4 font-weight-bold" style = {{fontFamily:"Copperplate Gothic Light"}}>{post.title}</h2>
 
                 {!post ? (
                     <div className="jumbotron text-center">
