@@ -90,7 +90,7 @@ class SinglePost extends Component {
         const { like, likes } = this.state;
 
         return (
-            <div className="card-body">
+            <div className="card-body" >
                 <img
                     src={`${process.env.REACT_APP_API_URL}/post/photo/${post._id}`}
                     alt={post.title}
@@ -98,7 +98,7 @@ class SinglePost extends Component {
                     className="img-thunbnail mb-3"
                     style={{
                         height: '300px',
-                        width: '100%',
+                        width: '70%',
                         objectFit: 'cover'
                     }}
                 />
@@ -123,7 +123,7 @@ class SinglePost extends Component {
 
                 <p className="card-text">{post.body}</p>
                 <br />
-                <p className="font-italic mark">
+                <p className="font-italic mark text-primary">
                     Posted by <Link to={`${posterId}`}>{posterName} </Link>
                     on {new Date(post.created).toDateString()}
                 </p>
@@ -147,7 +147,7 @@ class SinglePost extends Component {
                         {isAuthenticated().user && isAuthenticated().user.role === 'admin' && (
                             <div class="card mt-5">
                                 <div className="card-body">
-                                    <h5 className="card-title">Admin</h5>
+                                    <h5 className="card-title text-primary">Admin</h5>
                                     <p className="mb-2 text-danger">Edit/Delete as an Admin</p>
                                     <Link
                                         to={`/post/edit/${post._id}`}
@@ -177,8 +177,8 @@ class SinglePost extends Component {
         }
 
         return (
-            <div className="container">
-                <h2 className="display-2 mt-5 mb-5">{post.title}</h2>
+            <div className="container text-white font-weight-bold" style = {{marginTop:"100px", fontFamily:"Bahnschrift SemiBold"}}>
+                <h2 className="display-2 mt-5 mb-5 font-weight-bold" style = {{fontFamily:"Copperplate Gothic Light"}}>{post.title}</h2>
 
                 {!post ? (
                     <div className="jumbotron text-center">

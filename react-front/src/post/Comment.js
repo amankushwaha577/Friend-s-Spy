@@ -83,15 +83,16 @@ class Comment extends Component {
 
         return (
             <div>
-                <h2 className="mt-5 mb-5">Leave a comment</h2>
+                <h2 className="mt-5">Leave a comment</h2>
+                <hr style={{ color: "red", backgroundColor: "red",height: 3 }}/>
 
                 <form onSubmit={this.addComment}>
-                    <div className="form-group">
+                    <div className="form-group text-primary">
                         <input
                             type="text"
                             onChange={this.handleChange}
                             value={this.state.text}
-                            className="form-control"
+                            className="form-control text-primary"
                             placeholder="Leave a comment..."
                         />
                         <button className="btn btn-raised btn-success mt-2">
@@ -133,7 +134,7 @@ class Comment extends Component {
                                 </Link>
                                 <div>
                                     <p className="lead">{comment.text}</p>
-                                    <p className="font-italic mark">
+                                    <p className="font-italic mark text-dark">
                                         Posted by{" "}
                                         <Link
                                             to={`/user/${comment.postedBy._id}`}
