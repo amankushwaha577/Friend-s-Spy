@@ -139,12 +139,11 @@ class Signin extends Component {
 
         return (
             <div className="container text-primary" style = {{marginTop:"100px", fontFamily:"Bahnschrift SemiBold"}}>
-                <h2 className="mt-5 mb-5">SIGN IN</h2>
+                <h2 className="mt-3 mb-2">SIGN IN</h2>
                 <hr />
                 <SocialLogin />
 
                 <hr />
-                <br />
 
                 <div
                     className="alert alert-danger"
