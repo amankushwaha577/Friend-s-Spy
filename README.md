@@ -11,7 +11,7 @@ Founded By Team Friend's Spy,The mission of our Web Application is to give peopl
   - ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `The 4th important  purpose of Friend's spy is  social connections. The account connects you to the people you know. Just like Facebook, Twitter provides helpful suggestions on the ideal people you should follow. You can also connect to the people you don’t know and build a long-lasting relationship. You only need to update the right information on your profile..`
 
 
- 
+  
  
 
  <br>
