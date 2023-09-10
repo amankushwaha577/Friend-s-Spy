@@ -1,20 +1,33 @@
 # ``` Friend's Spy ```
-Founded By Team Friend's Spy, Friend's Spy gives people the power to build community and bring the world closer together. People will use Friend'Spy  to stay connected with friends and family, to discover what's going on in the world, and to share and express what matters to them.
+I'm thrilled to present my latest project Friend's Spy, A FullStack Social Network Application built entirely from scratch. This project represents a culmination of my web development skills and expertise in modern technologies of MERN Stack. It's a comprehensive social network platform with a wide range of features designed to offer users an engaging and interactive experience.
 
 ![Webp net-gifmaker](https://user-images.githubusercontent.com/53748350/265252183-65912f3f-7c96-4e9f-879c-aef475cfbc43.gif)
 
-   - ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `Friend's Spy is a social media site, and its primary purpose is to connect people and allow people to share their thoughts with a big audience. Our Web App allows users to discover stories regarding today's biggest news and events, follow people or companies that post content they enjoy consuming, or simply communicate with friends. Additionally, PR teams and marketers can use friend's spy to increase brand awareness and delight their audience.`
-
-  -  ![#c5f015](https://via.placeholder.com/15/c5f015/000000?text=+) `Our Web Application will often been used to spread breaking news quickly. At times, it's even faster than traditional media outlets at spreading groundbreaking information quickly.`
-
-  - ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) `People can use friend's spy for entertainment purposes, or to stay in contact with friends and family. People could use it to share a funny story, post a compelling video, or ask your audience a question. The choice is yours..`
-  - ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `Just like Facebook, Twitter provides helpful suggestions on the ideal people you should follow. You can also connect to the people you don’t know and build a long-lasting relationship. You only need to update the right information on your profile..`
 
 
-  
- 
+   - ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `1. Authentication and Authorization: I've implemented a rock-solid authentication system, including password reset functionality using JWT (JSON Web Tokens). This ensures that user accounts are secure and accessible only by authorized individuals.`
 
- <br>
+  -  ![#c5f015](https://via.placeholder.com/15/c5f015/000000?text=+) `2. Social Login: Users can conveniently sign in using their social media accounts, thanks to the integration of JWT for secure authentication.`
+
+  - ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) `3. CRUD Operations: The application allows users to perform Create, Read, Update, and Delete operations on their posts and comments.`
+   
+  - ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `4. Image Upload: Users can upload images to personalize their posts and profiles, enhancing the visual appeal of the platform.`
+
+   - ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `5. User Relationships: The platform supports user-to-user relationships, including following and unfollowing, enabling users to curate their feeds.`
+
+  -  ![#c5f015](https://via.placeholder.com/15/c5f015/000000?text=+) `6. Likes and Comments: Users can engage with posts through likes and comments, fostering interaction and community building.`
+
+  - ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) `7. Super Admin Access: I've implemented role-based access control, with a Super Admin role to manage users, content, and platform settings.`
+    
+  - ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `8. Custom reCAPTCHA: To enhance security, custom reCAPTCHA has been integrated to protect against automated threats.`
+    
+ -  ![#c5f015](https://via.placeholder.com/15/c5f015/000000?text=+) `9.Pagination: Efficient pagination systems have been incorporated to handle large datasets gracefully, providing users with seamless browsing experiences.`
+
+  - ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) `10.Real-Time Communication: The application supports real-time messaging and notifications to keep users engaged and informed.`
+    
+  - ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `11.SEO Optimization: SEO best practices have been applied to improve the platform's search engine visibility, attracting more users.`
+
+<br><br>
 
 # LANGUAGES, FRAMEWORKS, LIBRARY AND DATABASE
 
@@ -33,7 +46,7 @@ Mongo DB
  
 <br>
 
-# Online Reachability:
+# ONLINE REACHABILITY:
 
 
 TECHNICAL SIDES OF FRIEND'S SPY
@@ -60,7 +73,7 @@ TECHNICAL SIDES OF FRIEND'S SPY
 
 <br>
 
-# Team Friend's Spy
+# TEAM FRIEND"S SPY
 | Name | Github Username | 
 | ------ | ------ |
 | Aman Kushwaha | [https://github.com/amankushwaha577/]  |
