@@ -1,0 +1,42 @@
+/* Navbar.css */
+
+/* Navbar background color */
+.navbar {
+    background-color: #333;
+}
+
+/* Navbar brand/logo styles */
+.navbar-brand {
+    color: #fff;
+    font-size: 24px;
+}
+
+/* Navbar brand/logo on hover */
+.navbar-brand:hover {
+    color: #ff9900;
+}
+
+/* Navbar links styles */
+.navbar-nav .nav-link {
+    color: #fff;
+    font-size: 18px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Navbar links on hover */
+.navbar-nav .nav-link:hover {
+    background-color: #ff9900;
+    color: #333;
+    border-radius: 5px;
+}
+
+/* Navbar toggler styles */
+.navbar-toggler-icon {
+    background-color: #fff;
+}
+
+/* Navbar toggler on hover */
+.navbar-toggler:hover .navbar-toggler-icon {
+    background-color: #ff9900;
+}
