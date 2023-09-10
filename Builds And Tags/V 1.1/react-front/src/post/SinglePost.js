@@ -145,7 +145,7 @@ class SinglePost extends Component {
 
                     <div>
                         {isAuthenticated().user && isAuthenticated().user.role === 'admin' && (
-                            <div class="card mt-5">
+                            <div className="card mt-5">
                                 <div className="card-body">
                                     <h5 className="card-title text-primary">Admin</h5>
                                     <p className="mb-2 text-danger">Edit/Delete as an Admin</p>
