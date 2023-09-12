@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import { Link, withRouter } from "react-router-dom";
 import { signout, isAuthenticated } from "../auth";
 
-import Logo from "../images/mountains.jpg";
+import Logo from "../images/logo.png";
 import '../css/navbar.css'; // Import the CSS file
 
 const isActive = (history, path) => {
