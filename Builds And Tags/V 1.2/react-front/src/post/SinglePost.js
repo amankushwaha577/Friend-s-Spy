@@ -90,80 +90,81 @@ class SinglePost extends Component {
         const { like, likes } = this.state;
 
         return (
-            <div className="card-body" >
-                <img
-                    src={`${process.env.REACT_APP_API_URL}/post/photo/${post._id}`}
-                    alt={post.title}
-                    onError={i => (i.target.src = `${DefaultPost}`)}
-                    className="img-thunbnail mb-3"
-                    style={{
-                        height: '300px',
-                        width: '45%',
-                        border: "solid aqua 5px"
-                    }}
-                />
+            <div className="card-body" style={{ background: 'linear-gradient(to bottom, #ff6a00, #ff8a00, #ffaa00, #ffcc00, #ffee00)' }}>
+  <div className="row">
+    <div className="col-md-6">
+      <img
+        src={`${process.env.REACT_APP_API_URL}/post/photo/${post._id}`}
+        alt={post.title}
+        onError={i => (i.target.src = `${DefaultPost}`)}
+        className="img-thumbnail mb-3"
+        style={{
+          height: '300px',
+          width: '100%',
+          border: '5px solid aqua',
+        }}
+      />
+      <h3 onClick={this.likeToggle} style={{color:'purple'}}>
+        {like ? (
+          <i
+            className="fa fa-thumbs-up text-success bg-dark rounded-circle p-2"
+            style={{ fontSize: '24px', cursor: 'pointer' }}
+          />
+        ) : (
+          <i
+            className="fa fa-thumbs-up text-warning bg-dark rounded-circle p-2"
+            style={{ fontSize: '24px', cursor: 'pointer' }}
+          />
+        )}{' '}
+        {likes} Like
+      </h3>
+    </div>
+    <div className="col-md-6">
+      <p className="card-text">{post.body}</p>
+      <p className="font-italic mark text-primary">
+        Posted by <Link to={`${posterId}`}>{posterName} </Link>
+        on {new Date(post.created).toDateString()}
+      </p>
+      <div className="d-inline-block">
+        <Link to={`/`} className="btn btn-raised btn-primary btn-sm mr-3">
+          Back to posts
+        </Link>
 
-                {like ? (
-                    <h3 onClick={this.likeToggle}>
-                        <i
-                            className="fa fa-thumbs-up text-success bg-dark"
-                            style={{ padding: '10px', borderRadius: '50%' }}
-                        />{' '}
-                        {likes} Like
-                    </h3>
-                ) : (
-                    <h3 onClick={this.likeToggle}>
-                        <i
-                            className="fa fa-thumbs-up text-warning bg-dark"
-                            style={{ padding: '10px', borderRadius: '50%' }}
-                        />{' '}
-                        {likes} Like
-                    </h3>
-                )}
+        {isAuthenticated().user && isAuthenticated().user._id === post.postedBy._id && (
+          <>
+            <Link to={`/post/edit/${post._id}`} className="btn btn-raised btn-warning btn-sm mr-3">
+              Update Post
+            </Link>
+            <button onClick={this.deleteConfirmed} className="btn btn-raised btn-danger btn-sm">
+              Delete Post
+            </button>
+          </>
+        )}
 
-                <p className="card-text">{post.body}</p>
-                <br />
-                <p className="font-italic mark text-primary">
-                    Posted by <Link to={`${posterId}`}>{posterName} </Link>
-                    on {new Date(post.created).toDateString()}
-                </p>
-                <div className="d-inline-block">
-                    <Link to={`/`} className="btn btn-raised btn-primary btn-sm mr-5">
-                        Back to posts
-                    </Link>
-
-                    {isAuthenticated().user && isAuthenticated().user._id === post.postedBy._id && (
-                        <>
-                            <Link to={`/post/edit/${post._id}`} className="btn btn-raised btn-warning btn-sm mr-5">
-                                Update Post
-                            </Link>
-                            <button onClick={this.deleteConfirmed} className="btn btn-raised btn-danger">
-                                Delete Post
-                            </button>
-                        </>
-                    )}
-
-                    <div>
-                        {isAuthenticated().user && isAuthenticated().user.role === 'admin' && (
-                            <div className="card mt-5">
-                                <div className="card-body">
-                                    <h5 className="card-title text-primary">Admin</h5>
-                                    <p className="mb-2 text-danger">Edit/Delete as an Admin</p>
-                                    <Link
-                                        to={`/post/edit/${post._id}`}
-                                        className="btn btn-raised btn-warning btn-sm mr-5"
-                                    >
-                                        Update Post
-                                    </Link>
-                                    <button onClick={this.deleteConfirmed} className="btn btn-raised btn-danger">
-                                        Delete Post
-                                    </button>
-                                </div>
-                            </div>
-                        )}
-                    </div>
-                </div>
+        <div>
+          {isAuthenticated().user && isAuthenticated().user.role === 'admin' && (
+            <div className="card mt-3">
+              <div className="card-body">
+                <h5 className="card-title text-primary">Admin</h5>
+                <p className="mb-2 text-danger">Edit/Delete as an Admin</p>
+                <Link
+                  to={`/post/edit/${post._id}`}
+                  className="btn btn-raised btn-warning btn-sm mr-3"
+                >
+                  Update Post
+                </Link>
+                <button onClick={this.deleteConfirmed} className="btn btn-raised btn-danger btn-sm">
+                  Delete Post
+                </button>
+              </div>
             </div>
+          )}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
         );
     };
 

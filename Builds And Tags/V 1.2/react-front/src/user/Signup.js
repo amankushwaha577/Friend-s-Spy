@@ -84,7 +84,7 @@ class Signup extends Component {
     signupForm = (name, email, password, recaptcha) => (
         <form className= "jumbotron">
             <div className="form-group">
-                <label className="text-muted">Name</label>
+                <label className="text-light">Name</label>
                 <input
                     onChange={this.handleChange("name")}
                     type="text"
@@ -93,7 +93,7 @@ class Signup extends Component {
                 />
             </div>
             <div className="form-group">
-                <label className="text-muted">Email</label>
+                <label className="text-light">Email</label>
                 <input
                     onChange={this.handleChange("email")}
                     type="email"
@@ -102,7 +102,7 @@ class Signup extends Component {
                 />
             </div>
             <div className="form-group">
-                <label className="text-muted">Password</label>
+                <label className="text-light">Password</label>
                 <input
                     onChange={this.handleChange("password")}
                     type="password"
@@ -112,7 +112,7 @@ class Signup extends Component {
             </div>
 
             <div className="form-group">
-                <label className="text-muted">
+                <label className="text-light">
                     {recaptcha ? "Thanks. You got it!" : "What day is today?"}
                 </label>
 

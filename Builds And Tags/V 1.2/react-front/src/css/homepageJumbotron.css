@@ -1,0 +1,81 @@
+/* jumbotron.css */
+
+/* Styling for the jumbotron */
+.jumbotron {
+    background: linear-gradient(to bottom, #ff5733, #ff8c00); /* Gradient background (orange to dark orange) */
+    color: #fff; /* Text color */
+    text-align: center;
+    padding: 30px; /* Reduced padding to make it shorter */
+    border-radius: 20px; /* Rounded corners */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); /* Increased shadow effect */
+  }
+  
+
+  
+  /* Styling for the h1 element */
+  .jumbotron h1 {
+    font-size: 4rem; /* Larger font size */
+    font-weight: 900; /* Bolder text */
+  }
+  
+  /* Styling for the lead paragraph */
+  .jumbotron p.lead {
+    font-size: 1.75rem; /* Larger font size */
+  }
+  
+  /* Styling for the button */
+  .jumbotron button {
+    background-color: #ff4500; /* Custom button color (red-orange) */
+    border: none;
+    border-radius: 25px;
+    padding: 15px 30px; /* More padding */
+    font-size: 1.5rem; /* Larger font size */
+    font-weight: 600; /* Bolder text */
+    color: #fff; /* Button text color */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+  }
+  
+  /* Styling for the button on hover */
+  .jumbotron button:hover {
+    background-color: #ff6347; /* Button color on hover (lighter red-orange) */
+  }
+  
+
+  /* jumbotron.css */
+
+/* Keyframes for the pulsating animation */
+@keyframes pulsate {
+    0% {
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+      color: #fff; /* White text color */
+      transform: scale(1);
+    }
+    50% {
+      text-shadow: 0 0 20px rgba(255, 255, 255, 0.9);
+      color: #fff; /* White text color */
+      transform: scale(1.1);
+    }
+    100% {
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+      color: #fff; /* White text color */
+      transform: scale(1);
+    }
+  }
+  
+  /* Styling for the jumbotron */
+  .jumbotron {
+    background: linear-gradient(to bottom, #ff5733, #ff8c00); /* Gradient background (orange to dark orange) */
+    text-align: center;
+    padding: 30px; /* Reduced padding to make it shorter */
+    border-radius: 20px; /* Rounded corners */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); /* Increased shadow effect */
+  }
+  
+  /* Styling for the animated text */
+  .jumbotron h1 {
+    font-size: 4rem; /* Larger font size */
+    font-weight: 900; /* Bolder text */
+    animation: pulsate 2s infinite; /* Apply the pulsate animation */
+  }
+  

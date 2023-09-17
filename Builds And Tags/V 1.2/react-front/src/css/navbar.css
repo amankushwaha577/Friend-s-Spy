@@ -1,8 +1,40 @@
-.navbar-logo {
-    height: 40px;
-    object-fit: contain;
-    
+/* src/navbar.css */
+
+/* Navbar container */
+.nav-container {
+  background-color: #333;
+  overflow: hidden;
+}
+
+/* Navbar list */
+.nav-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  background-color: #333;
+}
+
+/* Navbar item */
+.nav-item {
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar link */
+.nav-link {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Responsive styles for small screens */
+@media screen and (max-width: 600px) {
+  .nav-list {
+    flex-direction: column;
+    text-align: center;
   }
-
-
-  
+}

@@ -18,10 +18,27 @@ const navStyle = {
   top: "0px",
   overflow: "hidden",
   zIndex: "200",
+  padding: '0px',         // Example padding for the navigation bar
+  display: 'flex',         // Align logo and links horizontally
+  alignItems: 'center'     // Center items vertically
+};
+
+
+
+const logoStyle = {
+  width: '130px',         // Adjust the width as needed
+  height: '30px',         // Maintain aspect ratio
+  marginRight: '10px',     // Adjust the margin as needed
+  marginLeft: '10px' 
 };
 
 const Menu = ({ history }) => (
   <div style={navStyle}>
+    <img
+      src={Logo}
+      alt="Your Logo"
+      style={logoStyle}
+    />
     <ul className="nav nav-tabs navbar-fixed-top">
       <li className="nav-item">
         <Link className="nav-link" style={isActive(history, "/")} to="/">

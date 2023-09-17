@@ -50,31 +50,32 @@ class Posts extends Component {
 
           return (
             // <div className="card col-md-4" key={i}>
-            <div className="card mb-3" key={i} style={{flex: "0 0 33.33333%", maxWidth: "30%", marginRight: "3.33%"}}>
-              <div className="card-body">
-                <img
-                  src={`${process.env.REACT_APP_API_URL}/post/photo/${post._id}`}
-                  alt={post.title}
-                  onError={i => (i.target.src = `${DefaultPost}`)}
-                  className="img-thunbnail mb-3"
-                  style={{ height: "200px", width: "100%" }}
-                />
-                <h5 className="card-title" style={{fontFamily:"Bahnschrift SemiBold"}}>{post.title}</h5>
-                <p className="card-text" style={{fontFamily:"Segoe Print"}}>{post.body.substring(0, 100)}</p>
-                <br />
-                <p className="font-italic mark" style={{fontFamily:"Century Gothic"}}>
-                  Posted by <Link to={`${posterId}`}>{posterName} </Link>
-                  on {new Date(post.created).toDateString()}
-                </p>
-                <Link
-                  to={`/post/${post._id}`}
-                  className="btn btn-raised btn-primary btn-sm"
-                  style={{fontFamily:"Segoe UI"}}
-                >
-                  Read more
-                </Link>
-              </div>
-            </div>
+            <div className="card mb-3" key={i} style={{ flex: "0 0 33.33333%", maxWidth: "30%", marginRight: "3.33%" }}>
+  <img
+    src={`${process.env.REACT_APP_API_URL}/post/photo/${post._id}`}
+    alt={post.title}
+    onError={i => (i.target.src = `${DefaultPost}`)}
+    className="card-img-top"
+    style={{ height: "200px", objectFit: "cover" }}
+  />
+  <div className="card-body">
+    <h5 className="card-title" style={{ fontFamily: "Bahnschrift SemiBold" }}>{post.title}</h5>
+    <p className="card-text" style={{ fontFamily: "Segoe Print" }}>{post.body.substring(0, 100)}</p>
+  </div>
+  <div className="card-footer">
+    <small className="text-muted">
+      Posted by <Link to={`${posterId}`}>{posterName}</Link> on {new Date(post.created).toDateString()}
+    </small>
+    <Link
+      to={`/post/${post._id}`}
+      className="btn btn-primary btn-sm float-right"
+      style={{ fontFamily: "Segoe UI" }}
+    >
+      Read more
+    </Link>
+  </div>
+</div>
+
           );
         })}
       </div>

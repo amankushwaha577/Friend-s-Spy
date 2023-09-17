@@ -48,37 +48,40 @@ class FindPeople extends Component {
 
     renderUsers = users => (
         <div className="row">
-            {users.map((user, i) => (
-                <div className="card col-md-3" key={i} style={{flex: "0 0 33.33333%", maxWidth: "30%", marginRight: "3.33%"}}>
-                    <img
-                        style={{ height: "300px", width: "auto" }}
-                        className="img-thumbnail"
-                        src={`${process.env.REACT_APP_API_URL}/user/photo/${
-                            user._id
-                        }`}
-                        onError={i => (i.target.src = `${DefaultProfile}`)}
-                        alt={user.name}
-                    />
-                    <div className="card-body">
-                        <h5 className="card-title">{user.name}</h5>
-                        <p className="card-text">{user.email}</p>
-                        <Link
-                            to={`/user/${user._id}`}
-                            className="btn btn-raised btn-primary btn-sm"
-                        >
-                            View Profile
-                        </Link>
-
-                        <button
-                            onClick={() => this.clickFollow(user, i)}
-                            className="btn btn-raised float-right btn-sm" style ={{background:"blue",color:"white"}}
-                        >
-                            Follow
-                        </button>
-                    </div>
-                </div>
-            ))}
+  {users.map((user, i) => (
+    <div className="col-md-3 mb-4" key={i}>
+      <div className="card h-100">
+        <img
+          src={`${process.env.REACT_APP_API_URL}/user/photo/${user._id}`}
+          onError={(i) => (i.target.src = `${DefaultProfile}`)}
+          alt={user.name}
+          className="card-img-top"
+          style={{ height: "300px", objectFit: "cover" }}
+        />
+        <div className="card-body">
+          <h5 className="card-title">{user.name}</h5>
+          <p className="card-text">{user.email}</p>
         </div>
+        <div className="card-footer">
+          <Link
+            to={`/user/${user._id}`}
+            className="btn btn-primary btn-sm"
+          >
+            View Profile
+          </Link>
+          <button
+            onClick={() => this.clickFollow(user, i)}
+            className="btn btn-sm float-right"
+            style={{ backgroundColor: "blue", color: "white" }}
+          >
+            Follow
+          </button>
+        </div>
+      </div>
+    </div>
+  ))}
+</div>
+
     );
 
     render() {
