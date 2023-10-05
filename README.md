@@ -6,7 +6,7 @@ I'm thrilled to present my latest project Friend's Spy, A FullStack Social Netwo
  
 
    - ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `1. Authentication and Authorization: I've implemented a rock-solid authentication system, including password reset functionality using JWT (JSON Web Tokens). This ensures that user accounts are secure and accessible only by authorized individuals.`
-
+ 
   -  ![#c5f015](https://via.placeholder.com/15/c5f015/000000?text=+) `2. Social Login: Users can conveniently sign in using their social media accounts, thanks to the integration of JWT for secure authentication.`
 
   - ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) `3. CRUD Operations: The application allows users to perform Create, Read, Update, and Delete operations on their posts and comments.`
