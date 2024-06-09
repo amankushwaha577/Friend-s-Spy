@@ -85,7 +85,7 @@ class ProfileTabs extends Component {
                         <hr style={{ color: "red", backgroundColor: "red",height: 5 }}/>
                         {posts.map((post, i) => (
                             <div key={i}>
-                                <h3 class="alert alert-primary font-weight-bold" role="alert" style = {{fontFamily:"Lucida Console"}}>
+                                <h3 className="alert alert-primary font-weight-bold" role="alert" style = {{fontFamily:"Lucida Console"}}>
                                     <Link to={`/post/${post._id}`}>
                                         <div>
                                             <p>{post.title}</p>

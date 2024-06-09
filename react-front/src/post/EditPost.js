@@ -88,7 +88,7 @@ class EditPost extends Component {
     };
 
     editPostForm = (title, body) => (
-        <form class="jumbotron mt-4">
+        <form className="jumbotron mt-4">
             <div className="form-group">
                 <label className="text-muted">Post Photo</label>
                 <input

@@ -82,7 +82,7 @@ class Signup extends Component {
     };
 
     signupForm = (name, email, password, recaptcha) => (
-        <form class= "jumbotron">
+        <form className= "jumbotron">
             <div className="form-group">
                 <label className="text-muted">Name</label>
                 <input

@@ -22,10 +22,10 @@ class Admin extends Component {
 
         return (
             <div>
-                <main role="main" class="container" style = {{marginTop:"100px", fontFamily:"Bahnschrift SemiBold"}}>
-                     <div class="jumbotron">
+                <main role="main" className="container" style = {{marginTop:"100px", fontFamily:"Bahnschrift SemiBold"}}>
+                     <div className="jumbotron">
                         <h1>Admin Dashboard</h1>
-                        <p class="lead">Restric Users and Post</p>
+                        <p className="lead">Restric Users and Post</p>
                      </div>
                 </main>
                 <div className="container-fluid">

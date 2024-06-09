@@ -82,7 +82,7 @@ class Signin extends Component {
     };
 
     signinForm = (email, password, recaptcha) => (
-        <form class= "jumbotron">
+        <form className= "jumbotron">
             <div className="form-group">
                 <label className="text-muted">Email</label>
                 <input
