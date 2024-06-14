@@ -3,7 +3,7 @@ I'm thrilled to present my latest project Friend's Spy, A FullStack Social Netwo
 
 ![Webp net-gifmaker](https://user-images.githubusercontent.com/53748350/268497276-f3dee07e-c736-4676-a603-a5619a20f66d.gif)
  
-         
+            
   
    - ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `1. Authentication and Authorization: I've implemented a rock-solid authentication system, including password reset functionality using JWT (JSON Web Tokens). This ensures that user accounts are secure and accessible only by authorized individuals.`
  
