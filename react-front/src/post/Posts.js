@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { list } from "./apiPost";
 import DefaultPost from "../images/mountains.jpg";
 import { Link } from "react-router-dom";
+import "./Post.css"; // Import the CSS file
 
 class Posts extends Component {
   constructor() {
@@ -12,12 +13,11 @@ class Posts extends Component {
     };
   }
 
-  loadPosts = page => {
-    list(page).then(data => {
+  loadPosts = (page) => {
+    list(page).then((data) => {
       if (data.error) {
         console.log(data.error);
       } else {
-        console.log(data);
         this.setState({ posts: data });
       }
     });
@@ -27,17 +27,19 @@ class Posts extends Component {
     this.loadPosts(this.state.page);
   }
 
-  loadMore = number => {
-    this.setState({ page: this.state.page + number });
-    this.loadPosts(this.state.page + number);
+  loadMore = (number) => {
+    const nextPage = this.state.page + number;
+    this.setState({ page: nextPage });
+    this.loadPosts(nextPage);
   };
 
-  loadLess = number => {
-    this.setState({ page: this.state.page - number });
-    this.loadPosts(this.state.page - number);
+  loadLess = (number) => {
+    const prevPage = this.state.page - number;
+    this.setState({ page: prevPage });
+    this.loadPosts(prevPage);
   };
 
-  renderPosts = posts => {
+  renderPosts = (posts) => {
     return (
       <div className="row">
         {posts.map((post, i) => {
@@ -45,31 +47,30 @@ class Posts extends Component {
           const posterName = post.postedBy ? post.postedBy.name : " Unknown";
 
           if (!post.photo) {
-            return;
+            return null; // Handle cases where photo is not available
           }
 
           return (
-            // <div className="card col-md-4" key={i}>
-            <div className="card mb-3" key={i} style={{flex: "0 0 33.33333%", maxWidth: "30%", marginRight: "3.33%"}}>
-              <div className="card-body">
-                <img
-                  src={`${process.env.REACT_APP_API_URL}/post/photo/${post._id}`}
-                  alt={post.title}
-                  onError={i => (i.target.src = `${DefaultPost}`)}
-                  className="img-thunbnail mb-3"
-                  style={{ height: "200px", width: "100%" }}
-                />
-                <h5 className="card-title" style={{fontFamily:"Bahnschrift SemiBold"}}>{post.title}</h5>
-                <p className="card-text" style={{fontFamily:"Segoe Print"}}>{post.body.substring(0, 100)}</p>
-                <br />
-                <p className="font-italic mark" style={{fontFamily:"Century Gothic"}}>
-                  Posted by <Link to={`${posterId}`}>{posterName} </Link>
+            <div className="card mb-3 post-card" key={i}>
+              <img
+                src={`${process.env.REACT_APP_API_URL}/post/photo/${post._id}`}
+                alt={post.title}
+                onError={(i) => (i.target.src = `${DefaultPost}`)}
+                className="card-img-top post-img"
+              />
+              <div className="card-body post-body">
+                <h5 className="card-title post-title">{post.title}</h5>
+                <p className="card-text post-text">{post.body.substring(0, 100)}</p>
+                <p className="font-italic mark post-info">
+                  Posted by{" "}
+                  <Link to={`${posterId}`} className="post-link">
+                    {posterName}
+                  </Link>{" "}
                   on {new Date(post.created).toDateString()}
                 </p>
                 <Link
                   to={`/post/${post._id}`}
-                  className="btn btn-raised btn-primary btn-sm"
-                  style={{fontFamily:"Segoe UI"}}
+                  className="btn btn-primary btn-sm post-button"
                 >
                   Read more
                 </Link>
@@ -83,36 +84,31 @@ class Posts extends Component {
 
   render() {
     const { posts, page } = this.state;
+
     return (
-      <div className="container">
-        <h2 className="mt-5 mb-3 text-white font-weight-bold" style={{fontFamily:"Bahnschrift SemiBold"}}>
+      <div className="container post-container">
+        <h2 className="post-heading">
           {!posts.length ? "No more posts!" : "LATEST POSTS"}
         </h2>
 
         {this.renderPosts(posts)}
 
-        {page > 1 ? (
+        {page > 1 && (
           <button
-            className="btn btn-raised btn-warning mr-5 mt-5 mb-5"
-            style={{fontFamily:"Trebuchet MS"}}
-
+            className="btn btn-warning post-pagination"
             onClick={() => this.loadLess(1)}
           >
-            Previous ({this.state.page - 1})
+            Previous ({page - 1})
           </button>
-        ) : (
-          ""
         )}
 
-        {posts.length ? (
+        {posts.length > 0 && (
           <button
-            className="btn btn-raised mt-5 mb-5" style ={{backgroundColor: "red", color:"white",fontFamily:"Trebuchet MS"}}
+            className="btn btn-danger post-pagination"
             onClick={() => this.loadMore(1)}
           >
             Next ({page + 1})
           </button>
-        ) : (
-          ""
         )}
       </div>
     );
