@@ -1,0 +1,92 @@
+/* SinglePost.css */
+
+.singlepost-container {
+    margin-top: 100px;
+    font-family: 'Bahnschrift SemiBold';
+    width: 60%;
+    margin-left:  auto; /* Centering the container */
+    margin-right: auto;
+    
+}
+  
+  .singlepost-title {
+    font-family: 'Copperplate Gothic Light';
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: #333; /* Dark text color */
+  }
+  
+  .singlepost-card {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid #ccc3c3;
+  }
+  
+  .singlepost-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .singlepost-img {
+    max-height: 500px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  .singlepost-like {
+    cursor: pointer;
+    margin-bottom: 1rem;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+  }
+  
+  .singlepost-like i {
+    margin-right: 10px;
+  }
+  
+  .singlepost-like:hover {
+    transform: scale(1.05);
+    background-color: rgba(0, 123, 255, 0.8); /* Blue shade */
+    color: #fff;
+  }
+  
+  .singlepost-text {
+    font-family: 'Segoe Print';
+    line-height: 1.6;
+    color: #444; /* Darker text color */
+  }
+  
+  .singlepost-info {
+    font-family: 'Century Gothic';
+    color: #666; /* Medium dark text color */
+  }
+  
+  .singlepost-buttons .btn {
+    margin-right: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  .singlepost-buttons .btn:hover {
+    transform: translateY(-3px);
+  }
+  
+  @media (max-width: 768px) {
+    .singlepost-img {
+      height: 200px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .singlepost-title {
+      font-size: 2rem;
+    }
+  }
+  

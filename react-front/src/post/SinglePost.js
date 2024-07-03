@@ -4,6 +4,7 @@ import DefaultPost from '../images/mountains.jpg';
 import { Link, Redirect } from 'react-router-dom';
 import { isAuthenticated } from '../auth';
 import Comment from './Comment';
+import './SinglePost.css'; // Importing the CSS file
 
 class SinglePost extends Component {
     state = {
@@ -27,7 +28,6 @@ class SinglePost extends Component {
             if (data.error) {
                 console.log(data.error);
             } else {
-                console.log('COMMENTING USER IN SIGNEL POST', data);
                 this.setState({
                     post: data,
                     likes: data.likes.length,
@@ -90,51 +90,40 @@ class SinglePost extends Component {
         const { like, likes } = this.state;
 
         return (
-            <div className="card-body" >
+            <div className="singlepost-card">
                 <img
                     src={`${process.env.REACT_APP_API_URL}/post/photo/${post._id}`}
                     alt={post.title}
                     onError={i => (i.target.src = `${DefaultPost}`)}
-                    className="img-thunbnail mb-3"
-                    style={{
-                        height: '300px',
-                        width: '45%',
-                        border: "solid aqua 5px"
-                    }}
+                    className="singlepost-img mb-3"
                 />
 
-                {like ? (
-                    <h3 onClick={this.likeToggle}>
-                        <i
-                            className="fa fa-thumbs-up text-success bg-dark"
-                            style={{ padding: '10px', borderRadius: '50%' }}
-                        />{' '}
-                        {likes} Like
-                    </h3>
-                ) : (
-                    <h3 onClick={this.likeToggle}>
-                        <i
-                            className="fa fa-thumbs-up text-warning bg-dark"
-                            style={{ padding: '10px', borderRadius: '50%' }}
-                        />{' '}
-                        {likes} Like
-                    </h3>
-                )}
+                <h3 className="singlepost-like" style={{  color:'red' }} onClick={this.likeToggle}>
+                    <i
+                        className={`fa ${like ? 'fa-thumbs-up text-success' : 'fa-thumbs-up text-warning'} bg-dark`}
+                        style={{ padding: '10px', borderRadius: '50%', color:'red' }}
+                    />
+                    {likes} Like
+                </h3>
 
-                <p className="card-text">{post.body}</p>
+                <p className="card-text singlepost-text">{post.body}</p>
                 <br />
-                <p className="font-italic mark text-primary">
+                <p className="font-italic mark text-primary singlepost-info">
                     Posted by <Link to={`${posterId}`}>{posterName} </Link>
                     on {new Date(post.created).toDateString()}
                 </p>
-                <div className="d-inline-block">
-                    <Link to={`/`} className="btn btn-raised btn-primary btn-sm mr-5">
+
+                <div className="singlepost-buttons">
+                    <Link to={`/`} className="btn btn-raised btn-primary btn-sm mr-3">
                         Back to posts
                     </Link>
 
                     {isAuthenticated().user && isAuthenticated().user._id === post.postedBy._id && (
                         <>
-                            <Link to={`/post/edit/${post._id}`} className="btn btn-raised btn-warning btn-sm mr-5">
+                            <Link
+                                to={`/post/edit/${post._id}`}
+                                className="btn btn-raised btn-warning btn-sm mr-3"
+                            >
                                 Update Post
                             </Link>
                             <button onClick={this.deleteConfirmed} className="btn btn-raised btn-danger">
@@ -143,25 +132,23 @@ class SinglePost extends Component {
                         </>
                     )}
 
-                    <div>
-                        {isAuthenticated().user && isAuthenticated().user.role === 'admin' && (
-                            <div className="card mt-5">
-                                <div className="card-body">
-                                    <h5 className="card-title text-primary">Admin</h5>
-                                    <p className="mb-2 text-danger">Edit/Delete as an Admin</p>
-                                    <Link
-                                        to={`/post/edit/${post._id}`}
-                                        className="btn btn-raised btn-warning btn-sm mr-5"
-                                    >
-                                        Update Post
-                                    </Link>
-                                    <button onClick={this.deleteConfirmed} className="btn btn-raised btn-danger">
-                                        Delete Post
-                                    </button>
-                                </div>
+                    {isAuthenticated().user && isAuthenticated().user.role === 'admin' && (
+                        <div className="card mt-3">
+                            <div className="card-body">
+                                <h5 className="card-title text-primary">Admin</h5>
+                                <p className="mb-2 text-danger">Edit/Delete as an Admin</p>
+                                <Link
+                                    to={`/post/edit/${post._id}`}
+                                    className="btn btn-raised btn-warning btn-sm mr-3"
+                                >
+                                    Update Post
+                                </Link>
+                                <button onClick={this.deleteConfirmed} className="btn btn-raised btn-danger">
+                                    Delete Post
+                                </button>
                             </div>
-                        )}
-                    </div>
+                        </div>
+                    )}
                 </div>
             </div>
         );
@@ -177,8 +164,8 @@ class SinglePost extends Component {
         }
 
         return (
-            <div className="container text-white font-weight-bold" style = {{marginTop:"100px", fontFamily:"Bahnschrift SemiBold"}}>
-                <h2 className="display-2 mt-5 mb-4 font-weight-bold" style = {{fontFamily:"Copperplate Gothic Light"}}>{post.title}</h2>
+            <div className="singlepost-container text-white font-weight-bold">
+                <h2 className="singlepost-title">{post.title}</h2>
 
                 {!post ? (
                     <div className="jumbotron text-center">
