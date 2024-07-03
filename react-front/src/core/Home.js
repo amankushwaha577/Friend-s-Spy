@@ -1,6 +1,6 @@
 import React from "react";
 import Posts from "../post/Posts";
-import "./Home.css"; // Importing the SCSS file
+import "./Home.css"; // Importing the CSS file
 
 const Home = () => (
   <div className="home-container">

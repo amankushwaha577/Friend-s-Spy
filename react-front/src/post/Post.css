@@ -1,0 +1,76 @@
+/* POST.css */
+.container {
+    margin-top: 20px;
+  }
+  
+  .card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  .card-body {
+    padding: 20px;
+  }
+  
+  .card-title {
+    font-family: 'Bahnschrift SemiBold', sans-serif;
+    font-size: 1.5rem;
+    color: #333333;
+    margin-bottom: 10px;
+  }
+  
+  .card-text {
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 1.1rem;
+    color: #666666;
+    line-height: 1.6;
+  }
+  
+  .mark {
+    font-family: 'Century Gothic', sans-serif;
+    font-size: 0.9rem;
+    color: #777777;
+  }
+  
+  .btn-primary,
+  .btn-warning {
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 10px;
+    padding: 8px 16px;
+    border-radius: 4px;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
+  
+  .btn-warning {
+    background-color: #ffc107;
+    color: #333333;
+    border: none;
+  }
+  
+  .btn-warning:hover {
+    background-color: #e0a800;
+  }
+  
+  .posts-heading {
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333333;
+    margin-bottom: 20px;
+  }
+  
