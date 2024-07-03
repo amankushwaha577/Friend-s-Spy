@@ -1,0 +1,10 @@
+/* styles.css or custom.css */
+
+ body {
+  /* background-image: url("../src/css/background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover; */
+  background: linear-gradient(to right, #fead99, #feb47b);
+} 
