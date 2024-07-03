@@ -3,6 +3,7 @@ import { findPeople, follow } from "./apiUser";
 import DefaultProfile from "../images/avatar.jpg";
 import { Link } from "react-router-dom";
 import { isAuthenticated } from "../auth";
+import "./FindPeople.css"; // Import the CSS file
 
 class FindPeople extends Component {
     constructor() {
@@ -47,31 +48,27 @@ class FindPeople extends Component {
     };
 
     renderUsers = users => (
-        <div className="row">
+        <div className="user-grid">
             {users.map((user, i) => (
-                <div className="card col-md-3" key={i} style={{flex: "0 0 33.33333%", maxWidth: "30%", marginRight: "3.33%"}}>
+                <div className="user-card" key={i}>
                     <img
-                        style={{ height: "300px", width: "auto" }}
-                        className="img-thumbnail"
-                        src={`${process.env.REACT_APP_API_URL}/user/photo/${
-                            user._id
-                        }`}
+                        className="user-img"
+                        src={`${process.env.REACT_APP_API_URL}/user/photo/${user._id}`}
                         onError={i => (i.target.src = `${DefaultProfile}`)}
                         alt={user.name}
                     />
-                    <div className="card-body">
-                        <h5 className="card-title">{user.name}</h5>
-                        <p className="card-text">{user.email}</p>
+                    <div className="user-card-body">
+                        <h5 className="user-card-title">{user.name}</h5>
+                        <p className="user-card-text">{user.email}</p>
                         <Link
                             to={`/user/${user._id}`}
-                            className="btn btn-raised btn-primary btn-sm"
+                            className="btn btn-primary"
                         >
                             View Profile
                         </Link>
-
                         <button
                             onClick={() => this.clickFollow(user, i)}
-                            className="btn btn-raised float-right btn-sm" style ={{background:"blue",color:"white"}}
+                            className="btn btn-follow"
                         >
                             Follow
                         </button>
@@ -84,13 +81,11 @@ class FindPeople extends Component {
     render() {
         const { users, open, followMessage } = this.state;
         return (
-            <div className="container"  style = {{marginTop:"100px", fontFamily:"Copperplate Gothic Light"}}>
-                <h1 className="mt-5 mb-5 text-white font-weight-bold">Find People</h1>
-
+            <div className="container find-people-container">
+                <h1 className="find-people-title">Find People</h1>
                 {open && (
                     <div className="alert alert-success">{followMessage}</div>
                 )}
-
                 {this.renderUsers(users)}
             </div>
         );
