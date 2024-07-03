@@ -3,6 +3,7 @@ import { isAuthenticated } from "../auth";
 import { read, update, updateUser } from "./apiUser";
 import { Redirect } from "react-router-dom";
 import DefaultProfile from "../images/avatar.jpg";
+import './EditProfile.css'; // Import the CSS file
 
 class EditProfile extends Component {
   constructor() {
@@ -20,9 +21,9 @@ class EditProfile extends Component {
     };
   }
 
-  init = userId => {
+  init = (userId) => {
     const token = isAuthenticated().token;
-    read(userId, token).then(data => {
+    read(userId, token).then((data) => {
       if (data.error) {
         this.setState({ redirectToProfile: true });
       } else {
@@ -56,7 +57,6 @@ class EditProfile extends Component {
       this.setState({ error: "Name is required", loading: false });
       return false;
     }
-    // email@domain.com
     if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
       this.setState({
         error: "A valid Email is required",
@@ -74,16 +74,15 @@ class EditProfile extends Component {
     return true;
   };
 
-  handleChange = name => event => {
+  handleChange = (name) => (event) => {
     this.setState({ error: "" });
     const value = name === "photo" ? event.target.files[0] : event.target.value;
-
     const fileSize = name === "photo" ? event.target.files[0].size : 0;
     this.userData.set(name, value);
     this.setState({ [name]: value, fileSize });
   };
 
-  clickSubmit = event => {
+  clickSubmit = (event) => {
     event.preventDefault();
     this.setState({ loading: true });
 
@@ -91,7 +90,7 @@ class EditProfile extends Component {
       const userId = this.props.match.params.userId;
       const token = isAuthenticated().token;
 
-      update(userId, token, this.userData).then(data => {
+      update(userId, token, this.userData).then((data) => {
         if (data.error) {
           this.setState({ error: data.error });
         } else if (isAuthenticated().user.role === "admin") {
@@ -110,7 +109,7 @@ class EditProfile extends Component {
   };
 
   signupForm = (name, email, password, about) => (
-    <form className="jumbotron">
+    <form id="edit-profile-form">
       <div className="form-group">
         <label className="text-muted">Profile Photo</label>
         <input
@@ -138,7 +137,6 @@ class EditProfile extends Component {
           value={email}
         />
       </div>
-
       <div className="form-group">
         <label className="text-muted">About</label>
         <textarea
@@ -148,7 +146,6 @@ class EditProfile extends Component {
           value={about}
         />
       </div>
-
       <div className="form-group">
         <label className="text-muted">Password</label>
         <input
@@ -181,23 +178,18 @@ class EditProfile extends Component {
     }
 
     const photoUrl = id
-      ? `${
-          process.env.REACT_APP_API_URL
-        }/user/photo/${id}?${new Date().getTime()}`
+      ? `${process.env.REACT_APP_API_URL}/user/photo/${id}?${new Date().getTime()}`
       : DefaultProfile;
 
     return (
-      <div className="container text-white font-weight-bold" style = {{marginTop:"100px", fontFamily:"Bahnschrift SemiBold"}}>
-        <h2 className="mt-5 mb-3 font-weight-bold" style = {{fontFamily:"Copperplate Gothic Light"}}>EDIT PROFILE</h2>
-        <div
-          className="alert alert-danger"
-          style={{ display: error ? "" : "none" }}
-        >
+      <div id="edit-profile-container">
+        <h2 id="edit-profile-title">Edit Profile</h2>
+        <div className="alert alert-danger" style={{ display: error ? "" : "none" }}>
           {error}
         </div>
 
         {loading ? (
-          <div className="jumbotron text-center">
+          <div id="loading-container">
             <h2>Loading...</h2>
           </div>
         ) : (
@@ -205,18 +197,15 @@ class EditProfile extends Component {
         )}
 
         <img
-          style={{ height: "200px", width: "auto" }}
-          className="img-thumbnail mb-3"
+          id="profile-image"
           src={photoUrl}
-          onError={i => (i.target.src = `${DefaultProfile}`)}
+          onError={(i) => (i.target.src = `${DefaultProfile}`)}
           alt={name}
         />
 
-        {isAuthenticated().user.role === "admin" &&
-          this.signupForm(name, email, password, about)}
+        {isAuthenticated().user.role === "admin" && this.signupForm(name, email, password, about)}
 
-        {isAuthenticated().user._id === id &&
-          this.signupForm(name, email, password, about)}
+        {isAuthenticated().user._id === id && this.signupForm(name, email, password, about)}
       </div>
     );
   }
