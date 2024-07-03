@@ -71,7 +71,7 @@ const Menu = ({ history }) => (
           </li>
 
           <li className="nav-item ml-auto">
-            <span className="nav-link signout-link" onClick={() => signout(() => history.push("/"))}>
+            <span className="white" onClick={() => signout(() => history.push("/"))}>
               <i className="fas fa-sign-out-alt nav-icon"></i> Sign Out
             </span>
           </li>
