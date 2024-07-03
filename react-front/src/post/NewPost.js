@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { isAuthenticated } from "../auth";
 import { create } from "./apiPost";
 import { Redirect } from "react-router-dom";
+import "./NewPost.css"; // Import the CSS file
 
 class NewPost extends Component {
     constructor() {
@@ -72,7 +73,7 @@ class NewPost extends Component {
     };
 
     newPostForm = (title, body) => (
-        <form>
+        <form id="new-post-form">
             <div className="form-group">
                 <label className="text-muted">Post Photo</label>
                 <input
@@ -127,8 +128,8 @@ class NewPost extends Component {
         }
 
         return (
-            <div className="container jumbotron" style = {{marginTop:"100px", fontFamily:"Bahnschrift SemiBold"}}>
-                <h2 className="mt-3 mb-5">CREATE A NEW POST</h2>
+            <div id="new-post-container">
+                <h2 id="new-post-title">Create a New Post</h2>
                 <div
                     className="alert alert-danger"
                     style={{ display: error ? "" : "none" }}
@@ -137,7 +138,7 @@ class NewPost extends Component {
                 </div>
 
                 {loading ? (
-                    <div className="jumbotron text-center">
+                    <div id="loading-container">
                         <h2>Loading...</h2>
                     </div>
                 ) : (

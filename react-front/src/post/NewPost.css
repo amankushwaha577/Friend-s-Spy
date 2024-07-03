@@ -1,0 +1,91 @@
+/* NewPost.css */
+
+#new-post-container {
+    margin: 0 auto;
+    margin-top: 100px;
+    padding: 20px;
+    /* background: #f8f9fa; */
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    max-width: 600px;
+    
+    font-family: 'Bahnschrift SemiBold', sans-serif;
+    color: #333;
+}
+
+#new-post-title {
+    text-align: center;
+    margin-bottom: 40px;
+    font-family: 'Copperplate Gothic Light', sans-serif;
+    color: #182532;
+    font-weight: bold;
+}
+
+#new-post-form {
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#new-post-form .form-group {
+    margin-bottom: 20px;
+}
+
+#new-post-form .text-muted {
+    color: #6c757d !important;
+    font-weight: bold;
+}
+
+#new-post-form .form-control {
+    background: #f8f9fa;
+    border: 1px solid #ced4da;
+    color: #495057;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#new-post-form .form-control::placeholder {
+    color: #6c757d;
+}
+
+#new-post-form .btn {
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+}
+
+#new-post-form .btn-primary {
+    background: linear-gradient(135deg, #17a2b8, #007bff);
+    color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#new-post-form .btn-primary:hover {
+    background: linear-gradient(135deg, #007bff, #17a2b8);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.alert {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.alert-danger {
+    background: rgba(220, 53, 69, 0.2);
+    border: 1px solid rgba(220, 53, 69, 0.4);
+    color: #dc3545;
+}
+
+#loading-container {
+    text-align: center;
+    color: #6c757d;
+}
