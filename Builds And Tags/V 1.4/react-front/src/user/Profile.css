@@ -1,0 +1,97 @@
+/* Profile.css */
+
+.profile-container {
+    margin-top: 90px;
+    font-family: 'Comic Sans MS', cursive;
+    color: #fff;
+    background: #1a1a1d;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.profile-title {
+    font-family: 'Copperplate Gothic Light', sans-serif;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #f1f1f1;
+}
+
+.profile-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.profile-image-section {
+    text-align: center;
+}
+
+.profile-image {
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.profile-details {
+    background: #282828;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-info p {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.profile-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn {
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-create-post {
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-create-post:hover {
+    background: linear-gradient(135deg, #5a77c8, #875cbb);
+}
+
+.btn-edit-profile {
+    background: linear-gradient(135deg, #42e695, #3bb2b8);
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-edit-profile:hover {
+    background: linear-gradient(135deg, #33b97e, #2d919b);
+}
+
+.admin-card {
+    background: #333;
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.profile-about {
+    font-size: 1.2em;
+    text-align: center;
+    color: #e3e3e3;
+}

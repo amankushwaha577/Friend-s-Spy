@@ -1,0 +1,98 @@
+/* Post.css */
+
+.post-container {
+  /* /* background-color: #fff; */
+   padding-left: 50px; 
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+}
+
+.post-heading {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-family: 'Bahnschrift SemiBold';
+  font-size: 2rem;
+  color: #333;
+}
+
+.post-card {
+  flex: 0 0 30%;
+  max-width: 30%;
+  margin-right: 3.33%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out;
+}
+
+.post-card:hover {
+  transform: scale(1.05);
+}
+
+.post-img {
+  height: 200px;
+  object-fit: cover;
+}
+
+.post-body {
+  padding: 10px;
+}
+
+.post-title {
+  font-family: 'Bahnschrift SemiBold';
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.post-text {
+  font-family: 'Segoe Print';
+  font-size: 1rem;
+  color: #666;
+}
+
+.post-info {
+  font-family: 'Century Gothic';
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.post-link {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.post-button {
+  font-family: 'Segoe UI';
+  margin-top: 10px;
+  background-color: #007bff;
+  border-color: #007bff;
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.post-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.1);
+}
+
+.post-pagination {
+  font-family: 'Trebuchet MS';
+  font-size: 1rem;
+  margin-left: 10px;
+}
+
+.post-pagination.btn-warning {
+  color: #212529;
+  background-color: #ffc107;
+  border-color: #ffc107;
+}
+
+.post-pagination.btn-danger {
+  color: #fff;
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
