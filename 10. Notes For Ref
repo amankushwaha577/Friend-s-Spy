@@ -1,2 +1,2 @@
 1.React Issue : # $env:NODE_OPTIONS = "--openssl-legacy-provider"
-  => Base Node Version is previous
+  => Base Node Version is previous 
