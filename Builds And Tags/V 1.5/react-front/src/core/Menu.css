@@ -1,0 +1,132 @@
+/* App.css or index.css */
+@import '~@fortawesome/fontawesome-free/css/all.css';
+/* Navbar Container */
+.navbar-container {
+  background-color: #000; /* Black background */
+  font-family: 'Roboto', sans-serif;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  overflow: hidden;
+  z-index: 200;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  transition: background-color 0.5s;
+  padding: 5px 10px; /* Adjusted padding */
+}
+
+.navbar-container:hover {
+  background-color: #111; /* Slightly lighter on hover */
+}
+
+/* Navbar Links */
+.nav-tabs {
+  display: flex;
+  justify-content: space-around;
+  margin: 0;
+  list-style: none;
+  background: transparent;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+}
+
+.navbar-logo {
+  height: 40px; /* Adjusted logo height */
+  margin-right: 20px;
+  transition: transform 0.5s;
+}
+
+.navbar-logo:hover {
+  transform: rotate(360deg); /* Rotates the logo on hover */
+}
+
+.nav-link {
+  color: #fff;
+  padding: 8px 15px; /* Adjusted padding */
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s, background-color 0.3s, transform 0.3s;
+  border-radius: 4px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.nav-link .nav-icon {
+  margin-right: 5px;
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background-color: #ff9900;
+  transition: width 0.3s, left 0.3s;
+}
+
+.nav-link:hover::before {
+  width: 100%;
+  left: 0;
+}
+
+.nav-link:hover {
+  color: #ff9900; /* Orange color on hover */
+  transform: scale(1.1);
+  background-color: rgba(255, 153, 0, 0.2); /* Slight background highlight on hover */
+}
+
+.nav-link:active {
+  background-color: rgba(255, 153, 0, 0.4); /* Darker background on active */
+}
+
+.nav-link.signout-link {
+  cursor: pointer;
+}
+
+.nav-link.active {
+  color: #ff9900;
+  background-color: rgba(255, 153, 0, 0.3);
+}
+
+.logo-container {
+  padding: 0;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  .nav-tabs {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+  }
+
+  .nav-link {
+    padding: 12px 15px; /* Adjusted padding */
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Hover Animation */
+@keyframes hover-anim {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+.white{
+  color: white;
+}

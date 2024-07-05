@@ -1,0 +1,30 @@
+/* Comment.css */
+
+.comment-container {
+    background: linear-gradient(to right, #fead99, #feb47b);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.comment-container img {
+    border-radius: 50%;
+    border: 1px solid black;
+}
+
+.comment-text {
+    font-size: 16px;
+    color: #333; /* or any appropriate dark color */
+}
+
+.comment-details {
+    font-size: 14px;
+    color: #666; /* or any appropriate lighter color */
+    margin-top: 5px;
+}
+
+.comment-actions {
+    font-size: 14px;
+    color: #f00; /* or any appropriate action color */
+    cursor: pointer;
+}
