@@ -1,5 +1,5 @@
 {
-  "name": "nodeapi",
+  "name": "friends-spy-nodeapi",
   "version": "1.0.0",
   "description": "A Node Js API",
   "main": "app.js",
