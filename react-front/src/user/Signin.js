@@ -89,7 +89,6 @@ class Signin extends Component {
                     onChange={this.handleChange("email")}
                     type="email"
                     className="form-control"
-                    placeholder="aman1@gmail.com"
                     value={email}
                 />
             </div>
@@ -99,7 +98,6 @@ class Signin extends Component {
                     onChange={this.handleChange("password")}
                     type="password"
                     className="form-control"
-                    placeholder="aman123"
                     value={password}
                 />
             </div>
